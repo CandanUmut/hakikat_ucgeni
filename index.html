@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hakikat Üçgeni · Şeytan – Nefis – Dünya</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-soft: #020617;
+      --panel: rgba(15, 23, 42, 0.98);
+      --panel-soft: rgba(15, 23, 42, 0.9);
+      --accent: #22c55e;
+      --accent-soft: rgba(34, 197, 94, 0.18);
+      --accent-strong: #4ade80;
+      --danger: #ef4444;
+      --text: #e5e7eb;
+      --text-soft: #9ca3af;
+      --border: #1f2937;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.35);
+      --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.3);
+      --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+        "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-sans);
+      background: radial-gradient(circle at top, #0f172a 0, #020617 55%, #020617 100%);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 24px 12px 40px;
+    }
+
+    .shell {
+      width: 100%;
+      max-width: 1120px;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.98));
+      border-radius: 28px;
+      border: 1px solid rgba(148, 163, 184, 0.15);
+      box-shadow: var(--shadow-soft);
+      padding: 20px 20px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (min-width: 768px) {
+      .shell {
+        padding: 26px 28px 32px;
+      }
+    }
+
+    .shell::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0% 0%, rgba(34, 197, 94, 0.06), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.05), transparent 55%);
+      pointer-events: none;
+      opacity: 0.9;
+    }
+
+    .shell-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .top-row {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .top-row {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .title-block h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      letter-spacing: 0.02em;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    @media (min-width: 768px) {
+      .title-block h1 {
+        font-size: 1.7rem;
+      }
+    }
+
+    .title-pill {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent-strong);
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(22, 163, 74, 0.07);
+      border: 1px solid rgba(34, 197, 94, 0.35);
+    }
+
+    .title-sub {
+      margin-top: 6px;
+      font-size: 0.88rem;
+      color: var(--text-soft);
+      max-width: 520px;
+      line-height: 1.5;
+    }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      align-self: flex-start;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 999px;
+      padding: 4px 6px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    .lang-toggle-label {
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .lang-toggle-buttons {
+      display: flex;
+      gap: 4px;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 999px;
+      padding: 2px;
+    }
+
+    .lang-btn {
+      border: none;
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      background: transparent;
+      color: var(--text-soft);
+      transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--accent);
+      color: #0b1120;
+      transform: translateY(-1px);
+    }
+
+    .lang-btn:hover:not(.active) {
+      background: rgba(148, 163, 184, 0.16);
+    }
+
+    /* Tabs */
+
+    .tabs {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 3px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.28);
+    }
+
+    .tab-btn {
+      flex: 1 1 90px;
+      min-width: 0;
+      border-radius: 999px;
+      border: none;
+      padding: 7px 12px;
+      font-size: 0.84rem;
+      cursor: pointer;
+      background: transparent;
+      color: var(--text-soft);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease,
+        transform 0.1s ease;
+    }
+
+    .tab-btn span.small {
+      font-size: 0.7rem;
+      opacity: 0.8;
+    }
+
+    .tab-btn.active {
+      background: radial-gradient(circle at 0 0, rgba(34, 197, 94, 0.38), rgba(15, 23, 42, 0.95));
+      color: #ecfdf5;
+      box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .tab-badge {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      opacity: 0.8;
+    }
+
+    /* Layout */
+
+    .main-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr);
+      gap: 14px;
+    }
+
+    @media (min-width: 960px) {
+      .main-grid {
+        grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
+        gap: 18px;
+      }
+    }
+
+    .panel {
+      background: var(--panel);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+      box-shadow: var(--shadow-sm);
+      padding: 14px 14px 16px;
+    }
+
+    @media (min-width: 768px) {
+      .panel {
+        padding: 16px 18px 18px;
+      }
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .panel-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: #e5fbe8;
+    }
+
+    .panel-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+    }
+
+    .chip {
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--text-soft);
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    /* Accordion */
+
+    .accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .accordion-item {
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      background: linear-gradient(
+        135deg,
+        rgba(15, 23, 42, 0.9),
+        rgba(15, 23, 42, 0.98)
+      );
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      padding: 9px 12px 9px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .accordion-main {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      min-width: 0;
+    }
+
+    .accordion-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: baseline;
+    }
+
+    .accordion-pill {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-strong);
+    }
+
+    .accordion-sub {
+      font-size: 0.78rem;
+      color: var(--text-soft);
+    }
+
+    .accordion-icon {
+      flex: 0 0 auto;
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      color: var(--accent-strong);
+      transition: transform 0.18s ease, background 0.18s ease;
+    }
+
+    .accordion-item.open .accordion-icon {
+      transform: rotate(90deg);
+      background: rgba(34, 197, 94, 0.18);
+    }
+
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      border-top: 1px solid rgba(15, 23, 42, 0.9);
+      transition: max-height 0.22s ease;
+    }
+
+    .accordion-body-inner {
+      padding: 8px 12px 10px;
+      font-size: 0.82rem;
+      color: var(--text-soft);
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr);
+      gap: 8px;
+    }
+
+    @media (min-width: 720px) {
+      .accordion-body-inner.dual {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      }
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.7rem;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      color: var(--text-soft);
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .list {
+      margin: 4px 0 0;
+      padding-left: 16px;
+    }
+
+    .list li {
+      margin-bottom: 3px;
+    }
+
+    /* Checklists / focus / notes */
+
+    .checklist {
+      margin-top: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 7px;
+      align-items: flex-start;
+      font-size: 0.82rem;
+      color: var(--text-soft);
+      padding: 5px 7px;
+      border-radius: 10px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.26);
+    }
+
+    .check-item input[type="checkbox"] {
+      margin-top: 3px;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+
+    .check-main {
+      flex: 1;
+    }
+
+    .check-label {
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    .check-desc {
+      font-size: 0.78rem;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+      justify-content: flex-start;
+    }
+
+    .btn {
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.92);
+      color: var(--text);
+      font-size: 0.78rem;
+      padding: 6px 11px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s ease, border-color 0.15s ease,
+        transform 0.08s ease, box-shadow 0.12s ease;
+    }
+
+    .btn:hover {
+      background: rgba(30, 64, 175, 0.8);
+      border-color: rgba(129, 140, 248, 0.7);
+      box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.5);
+    }
+
+    .btn:active {
+      transform: translateY(1px) scale(0.99);
+      box-shadow: none;
+    }
+
+    .btn-accent {
+      background: linear-gradient(135deg, var(--accent), #4ade80);
+      color: #022c22;
+      border-color: rgba(34, 197, 94, 0.9);
+      box-shadow: 0 12px 28px rgba(34, 197, 94, 0.45);
+    }
+
+    .btn-accent:hover {
+      background: linear-gradient(135deg, #4ade80, #22c55e);
+      box-shadow: 0 14px 32px rgba(34, 197, 94, 0.55);
+    }
+
+    .btn-icon {
+      font-size: 0.9rem;
+    }
+
+    .focus-box {
+      margin-top: 6px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px dashed rgba(74, 222, 128, 0.65);
+      background: rgba(22, 163, 74, 0.08);
+      font-size: 0.8rem;
+      color: #dcfce7;
+      min-height: 40px;
+    }
+
+    .focus-label {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      opacity: 0.86;
+      margin-bottom: 4px;
+    }
+
+    .focus-text {
+      white-space: pre-line;
+    }
+
+    .small-note {
+      margin-top: 6px;
+      font-size: 0.72rem;
+      color: var(--text-soft);
+    }
+
+    .notes-grid {
+      margin-top: 6px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 6px;
+    }
+
+    @media (min-width: 600px) {
+      .notes-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .note-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 0.8rem;
+    }
+
+    .note-label {
+      color: var(--text-soft);
+    }
+
+    .note-textarea {
+      resize: vertical;
+      min-height: 52px;
+      max-height: 200px;
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.96);
+      color: var(--text);
+      padding: 6px 8px;
+      font-size: 0.8rem;
+      font-family: var(--font-sans);
+    }
+
+    .note-textarea:focus {
+      outline: none;
+      border-color: rgba(129, 140, 248, 0.9);
+      box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.8);
+    }
+
+    .footer {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(148, 163, 184, 0.28);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      font-size: 0.78rem;
+      color: var(--text-soft);
+    }
+
+    .footer-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    .footer-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    /* Language handling */
+
+    .lang {
+      display: none;
+    }
+
+    body.lang-tr .lang-tr {
+      display: inline;
+    }
+
+    body.lang-en .lang-en {
+      display: inline;
+    }
+
+    /* For block-level language sections */
+    .lang-block {
+      display: none;
+    }
+
+    body.lang-tr .lang-block.lang-tr {
+      display: block;
+    }
+
+    body.lang-en .lang-block.lang-en {
+      display: block;
+    }
+
+    /* Topic sections */
+
+    .topic-section {
+      display: none;
+    }
+
+    .topic-section.active {
+      display: block;
+    }
+  </style>
+</head>
+<body class="lang-tr">
+  <div class="shell">
+    <div class="shell-inner">
+      <header class="top-row">
+        <div class="title-block">
+          <h1>
+            <span>Hakikat Üçgeni</span>
+            <span class="lang lang-en">· Reality Triangle</span>
+            <span class="title-pill">
+              <span class="lang lang-tr">ŞEYTAN · NEFİS · DÜNYA</span>
+              <span class="lang lang-en">SHAYTAN · NAFS · DUNYA</span>
+            </span>
+          </h1>
+          <p class="title-sub">
+            <span class="lang lang-tr">
+              Bu küçük uygulama, Kur’an perspektifinden
+              <strong>şeytan</strong>, <strong>nefis</strong> ve
+              <strong>dünya</strong> oyunlarını hatırlatır; günlük hayatta
+              uygulanabilir korunma adımları için sana eşlik eder.
+            </span>
+            <span class="lang lang-en">
+              This small app summarizes the games of
+              <strong>Shaytan</strong>, <strong>Nafs</strong> and
+              <strong>Dunya</strong> from a Qur’anic perspective, and helps
+              you stay connected to practical daily protections.
+            </span>
+          </p>
+        </div>
+
+        <div class="lang-toggle" aria-label="Language switch">
+          <span class="lang-toggle-label">
+            <span class="lang lang-tr">DİL</span>
+            <span class="lang lang-en">LANG</span>
+          </span>
+          <div class="lang-toggle-buttons">
+            <button class="lang-btn active" data-lang-switch="tr">TR</button>
+            <button class="lang-btn" data-lang-switch="en">EN</button>
+          </div>
+        </div>
+      </header>
+
+      <nav class="tabs" aria-label="Topic selector">
+        <button class="tab-btn active" data-tab="seytan">
+          <span class="tab-badge">
+            <span class="lang lang-tr">DIŞ DÜŞMAN</span>
+            <span class="lang lang-en">OUTER ENEMY</span>
+          </span>
+          <span>
+            <span class="lang lang-tr">Şeytan</span>
+            <span class="lang lang-en">Shaytan</span>
+          </span>
+          <span class="small">
+            <span class="lang lang-tr">Oyunlar ve Anti-Şeytan Protokolü</span>
+            <span class="lang lang-en">Games & Anti-Shaytan Protocol</span>
+          </span>
+        </button>
+
+        <button class="tab-btn" data-tab="nefis">
+          <span class="tab-badge">
+            <span class="lang lang-tr">İÇ CEPHE</span>
+            <span class="lang lang-en">INNER FRONT</span>
+          </span>
+          <span>
+            <span class="lang lang-tr">Nefis</span>
+            <span class="lang lang-en">Nafs</span>
+          </span>
+          <span class="small">
+            <span class="lang lang-tr">Benlik oyunları ve tezkiye</span>
+            <span class="lang lang-en">Ego games & tazkiyah</span>
+          </span>
+        </button>
+
+        <button class="tab-btn" data-tab="dunya">
+          <span class="tab-badge">
+            <span class="lang lang-tr">ZEMİN</span>
+            <span class="lang lang-en">GROUND</span>
+          </span>
+          <span>
+            <span class="lang lang-tr">Dünya</span>
+            <span class="lang lang-en">Dunya</span>
+          </span>
+          <span class="small">
+            <span class="lang lang-tr">Oyun, süs ve imtihan sahnesi</span>
+            <span class="lang lang-en">Play, decoration & test stage</span>
+          </span>
+        </button>
+      </nav>
+
+      <div class="main-grid">
+        <!-- LEFT: Oyunlar -->
+        <section class="panel topic-section active" id="topic-seytan">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">
+                <span class="lang lang-tr">Şeytanın Oyunları</span>
+                <span class="lang lang-en">Games of Shaytan</span>
+              </div>
+              <div class="panel-subtitle">
+                <span class="lang lang-tr">
+                  Aşağıdan bir oyuna tıklayıp detay ve korunma adımlarını görebilirsin.
+                </span>
+                <span class="lang lang-en">
+                  Tap any game below to see how it works and how to respond.
+                </span>
+              </div>
+            </div>
+            <span class="chip">
+              <span class="lang lang-tr">Dıştan fısıltı, içeride zaaf</span>
+              <span class="lang lang-en">Outer whisper, inner weakness</span>
+            </span>
+          </div>
+
+          <div class="accordion">
+            <!-- Game 1 -->
+            <article class="accordion-item open">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 1</span>
+                      <span class="lang lang-en">GAME 1</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Adım Adım Kaydırma</span>
+                      <span class="lang lang-en">Gradual Drift</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">
+                      “Bir kereden bir şey olmaz”la başlayan küçük adımlar, büyük günaha köprü olur.
+                    </span>
+                    <span class="lang lang-en">
+                      “Just once” and tiny steps slowly normalize what used to feel wrong.
+                    </span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge">
+                      <span class="badge-dot"></span>
+                      Psikoloji / Günlük Hayat
+                    </div>
+                    <ul class="list">
+                      <li>
+                        Nefis küçük ödüllere alıştıkça vicdan eşiği aşağı iner, “gri alanlar”
+                        normalleşir.
+                      </li>
+                      <li>
+                        Sosyal medya, finans, ilişkilerde
+                        <em>masum başlayan</em> şeyler adım adım harama doğru kaydırır.
+                      </li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;">
+                      <span class="badge-dot"></span>
+                      Korunma Önerileri
+                    </div>
+                    <ul class="list">
+                      <li>
+                        Kırmızı çizgilerini önceden yaz: “<strong>Asla yapmam</strong>”
+                        dediğin şeyleri netleştir.
+                      </li>
+                      <li>
+                        Her adımda sor:
+                        <strong>“Bu, daha büyük bir adımın kapısı olabilir mi?”</strong>
+                      </li>
+                      <li>
+                        Vesvese ve çekişme anında bilinçli şekilde
+                        <strong>“Eûzü billâhi mine’ş-şeytânirracîm”</strong> de
+                        ve <em>iyilik tarafını seç</em>.
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="lang-block lang-en">
+                    <div class="badge">
+                      <span class="badge-dot"></span>
+                      Psychology / Daily Life
+                    </div>
+                    <ul class="list">
+                      <li>
+                        Habit loops and desensitization: small “exceptions” push the line further
+                        every time.
+                      </li>
+                      <li>
+                        “Harmless” browsing, “just one loan”, “just one look” can become a
+                        pathway to addiction.
+                      </li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;">
+                      <span class="badge-dot"></span>
+                      Protection Suggestions
+                    </div>
+                    <ul class="list">
+                      <li>
+                        Define your <strong>non-negotiable red lines</strong> in advance.
+                      </li>
+                      <li>
+                        Ask:
+                        <strong>“Is this step opening the door to a bigger one?”</strong>
+                      </li>
+                      <li>
+                        When in inner conflict, say
+                        <strong>“A‘ūdhu billāhi mina’ş-shayṭāni’r-rajīm”</strong>
+                        and intentionally move toward the good action.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Game 2 -->
+            <article class="accordion-item">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 2</span>
+                      <span class="lang lang-en">GAME 2</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Günahı Süslemek</span>
+                      <span class="lang lang-en">Decorating Sin</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">
+                      Çirkin olan “özgürlük”, haram olan “normal” gibi gösterilir.
+                    </span>
+                    <span class="lang lang-en">
+                      Making ugly look “free” and forbidden look “normal and modern”.
+                    </span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Psikoloji</div>
+                    <ul class="list">
+                      <li>
+                        Rasyonalizasyon: “Herkes yapıyor”, “Ekonomi böyle”, “Çağın gereği”
+                        cümleleri.
+                      </li>
+                      <li>
+                        Diziler, reklamlar, sosyal çevre ile yeni “normal”ler oluşur.
+                      </li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;">
+                      <span class="badge-dot"></span> Korunma
+                    </div>
+                    <ul class="list">
+                      <li>
+                        Ölçüyü toplumdan değil,
+                        <strong>Kur’an ve sünnetten</strong> al.
+                      </li>
+                      <li>
+                        Özellikle helal-haram sınırlarında
+                        <strong>temel ilmihal</strong> bilgini tazele.
+                      </li>
+                      <li>
+                        Değerleri hafife alan değil, seni Allah’a yaklaştıran
+                        <strong>salih çevre</strong> seç.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Psychology</div>
+                    <ul class="list">
+                      <li>
+                        Rationalization and cultural normalizing: “everyone does it”, “it’s just
+                        how the system works”.
+                      </li>
+                      <li>
+                        Media slowly shifts your sense of what is acceptable.
+                      </li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;">
+                      <span class="badge-dot"></span> Protection
+                    </div>
+                    <ul class="list">
+                      <li>
+                        Take your scale from
+                        <strong>Revelation, not trends</strong>.
+                      </li>
+                      <li>
+                        Learn/refresh basic rulings in doubtful areas.
+                      </li>
+                      <li>
+                        Intentionally choose friends who pull you
+                        <strong>closer to God, not further</strong>.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Game 3: Vesvese -->
+            <article class="accordion-item">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 3</span>
+                      <span class="lang lang-en">GAME 3</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Vesvese ile Bulandırmak</span>
+                      <span class="lang lang-en">Whispers & Obsession</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">
+                      İman, abdest, namaz, niyet hakkında bitmeyen şüphe ve “Oldu mu?” soruları.
+                    </span>
+                    <span class="lang lang-en">
+                      Never-ending doubts about faith, wudu, ṣalāh and intention.
+                    </span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Psikoloji</div>
+                    <ul class="list">
+                      <li>Kaygı ve obsesif düşünce döngüsü; ibadet işkenceye dönüşür.</li>
+                      <li>“Allah beni kabul etmeyecek” düşüncesiyle ibadetten kaçış.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;">
+                      <span class="badge-dot"></span> Korunma
+                    </div>
+                    <ul class="list">
+                      <li>
+                        İstiâze et ama
+                        <strong>ameli bozma</strong>: Vesvese için tekrar tekrar başa dönme.
+                      </li>
+                      <li>
+                        Abdest/namazın geçerliliği gibi konularda
+                        <strong>temel hükümleri öğren</strong>.
+                      </li>
+                      <li>
+                        Sıkça dua et:
+                        <em>“Rabbim, kalbimi hak üzere sabit kıl.”</em>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Psychology</div>
+                    <ul class="list">
+                      <li>Classic anxiety/obsession loop; worship becomes torture.</li>
+                      <li>“God will not accept me” leads to avoiding worship altogether.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;">
+                      <span class="badge-dot"></span> Protection
+                    </div>
+                    <ul class="list">
+                      <li>
+                        Seek refuge but
+                        <strong>don’t restart again and again</strong> because of whispers.
+                      </li>
+                      <li>
+                        Learn core fiqh rules of validity so you can say “this is enough”.
+                      </li>
+                      <li>
+                        Frequently pray:
+                        <em>“O Lord, keep my heart firm upon truth.”</em>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- You can add more games similarly if you like later -->
+          </div>
+        </section>
+
+        <!-- Nefis section (left) -->
+        <section class="panel topic-section" id="topic-nefis">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">
+                <span class="lang lang-tr">Nefsin Oyunları</span>
+                <span class="lang lang-en">Games of Nafs</span>
+              </div>
+              <div class="panel-subtitle">
+                <span class="lang lang-tr">
+                  Emmare, levvâme ve mutmainne arasında gidip gelen benlik oyunlarını izle.
+                </span>
+                <span class="lang lang-en">
+                  Watch how the self plays between commanding evil, self-blame and peace.
+                </span>
+              </div>
+            </div>
+            <span class="chip">
+              <span class="lang lang-tr">İç düşman, terbiye edilebilir</span>
+              <span class="lang lang-en">Inner enemy, trainable</span>
+            </span>
+          </div>
+
+          <div class="accordion">
+            <!-- Nefis game 1 -->
+            <article class="accordion-item open">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 1</span>
+                      <span class="lang lang-en">GAME 1</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">“Ben Böyleyim” Masalı</span>
+                      <span class="lang lang-en">“This Is Just Me” Story</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">
+                      Değişim acısından kaçmak için karakteri “kader” gibi gösterir.
+                    </span>
+                    <span class="lang lang-en">
+                      To avoid the pain of change, nafs pretends your character is fixed.
+                    </span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge">
+                      <span class="badge-dot"></span> Günlük Örnekler
+                    </div>
+                    <ul class="list">
+                      <li>“Sinirliyim ben, ne yapayım?”</li>
+                      <li>“Ben sabredemem, bana göre değil.”</li>
+                      <li>“Çok kıskancım, elimde değil.”</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;">
+                      <span class="badge-dot"></span> Korunma
+                    </div>
+                    <ul class="list">
+                      <li>
+                        Şems suresindeki hakikati hatırla:
+                        <strong>“Nefsini arındıran kurtulur.”</strong>
+                      </li>
+                      <li>
+                        Etiket yerine
+                        <strong>davranışı küçült</strong>:
+                        “Öfkeliyim” değil, “Bazen kontrolsüz tepki veriyorum.”
+                      </li>
+                      <li>
+                        Küçük, ölçülebilir hedefler koy:
+                        “Bu hafta bir tartışmada susacağım.”
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge">
+                      <span class="badge-dot"></span> Examples
+                    </div>
+                    <ul class="list">
+                      <li>“I’m just hot-headed, that’s who I am.”</li>
+                      <li>“I can’t be patient, it’s not my style.”</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;">
+                      <span class="badge-dot"></span> Protection
+                    </div>
+                    <ul class="list">
+                      <li>
+                        Remember: the Qur’an says the one who
+                        <strong>purifies the nafs succeeds</strong>.
+                      </li>
+                      <li>
+                        Replace identity labels with behaviors:
+                        “Sometimes I overreact; this can be trained.”
+                      </li>
+                      <li>
+                        Set one small, concrete change for a week.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Nefis game 2: erteleme -->
+            <article class="accordion-item">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 2</span>
+                      <span class="lang lang-en">GAME 2</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Bugün Nefis, Yarın Tevbe</span>
+                      <span class="lang lang-en">Today Nafs, Tomorrow Tawbah</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">
+                      Hayrı erteler, günahı “şimdi”ye çeker.
+                    </span>
+                    <span class="lang lang-en">
+                      Delays good, speeds up desires: “later I’ll fix myself”.
+                    </span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Psikoloji</div>
+                    <ul class="list">
+                      <li>Erteleme ve suçluluk döngüsü; kişi gittikçe daha çaresiz hisseder.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;">
+                      <span class="badge-dot"></span> Korunma
+                    </div>
+                    <ul class="list">
+                      <li>
+                        <strong>Küçük ama hemen</strong> yap: 1 sayfa Kur’an, 2 rekât namaz,
+                        5 dk zikir.
+                      </li>
+                      <li>
+                        Hayır aklına geldiği anda
+                        <strong>ilk 2–3 dakikayı</strong> hemen yap.
+                      </li>
+                      <li>
+                        Ölümü ve hesabı günlük kısa tefekkürle diri tut.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Psychology</div>
+                    <ul class="list">
+                      <li>Procrastination with guilt; the more you delay, the heavier it feels.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;">
+                      <span class="badge-dot"></span> Protection
+                    </div>
+                    <ul class="list">
+                      <li>
+                        Do something <strong>small but immediate</strong>: 1 page Qur’an,
+                        2 rakʿahs, 5 minutes of dhikr.
+                      </li>
+                      <li>
+                        When a good deed idea comes, give it at least
+                        <strong>2–3 minutes right now</strong>.
+                      </li>
+                      <li>
+                        Remember death and accountability briefly every day.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Dunya section (left) -->
+        <section class="panel topic-section" id="topic-dunya">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">
+                <span class="lang lang-tr">Dünyanın Oyunları</span>
+                <span class="lang lang-en">Games of Dunya</span>
+              </div>
+              <div class="panel-subtitle">
+                <span class="lang lang-tr">
+                  Süs, kıyas, haz ve gaflet üzerinden kalbe yerleşmeye çalışan bir sahne.
+                </span>
+                <span class="lang lang-en">
+                  A stage of decoration, comparison, quick pleasure and heedlessness.
+                </span>
+              </div>
+            </div>
+            <span class="chip">
+              <span class="lang lang-tr">Elinde olsun, kalbinde değil</span>
+              <span class="lang lang-en">In your hand, not your heart</span>
+            </span>
+          </div>
+
+          <div class="accordion">
+            <!-- Dunya game 1 -->
+            <article class="accordion-item open">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 1</span>
+                      <span class="lang lang-en">GAME 1</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Süs Oyunu – Görünürsen Varsın</span>
+                      <span class="lang lang-en">Decoration – You Are What You Show</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">
+                      Değeri marka, ev, araba ve profil üzerinden tanımlar.
+                    </span>
+                    <span class="lang lang-en">
+                      Value is tied to brands, house, car, social media profile.
+                    </span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge">
+                      <span class="badge-dot"></span> Günlük Yansımalar
+                    </div>
+                    <ul class="list">
+                      <li>İç derinlik yerine görüntüye yatırım yapmak.</li>
+                      <li>Profil ve “story”ler üzerinden kimlik inşa etmeye çalışmak.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;">
+                      <span class="badge-dot"></span> Korunma
+                    </div>
+                    <ul class="list">
+                      <li>
+                        Her gün en az bir iç güzellik adımı:
+                        <strong>dua, tevbe, gizli sadaka, gizli iyilik</strong>.
+                      </li>
+                      <li>
+                        Sosyal medyada gösterdiğin şeyden daha fazla
+                        <strong>göstermediğin hayırların</strong> olsun.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge">
+                      <span class="badge-dot"></span> Daily Reflections
+                    </div>
+                    <ul class="list">
+                      <li>Investing in image more than in character.</li>
+                      <li>Building “identity” through posts and stories.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;">
+                      <span class="badge-dot"></span> Protection
+                    </div>
+                    <ul class="list">
+                      <li>
+                        Do at least one
+                        <strong>hidden good deed</strong> daily: duʿā, tawbah, charity.
+                      </li>
+                      <li>
+                        Aim to have more good that is
+                        <strong>unseen</strong> than what you post.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- Dunya game 2: comparison -->
+            <article class="accordion-item">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 2</span>
+                      <span class="lang lang-en">GAME 2</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Karşılaştırma ve Rekabet</span>
+                      <span class="lang lang-en">Comparison & Competition</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">
+                      “Kim önde?” hesabıyla nimeti unutturur, haseti besler.
+                    </span>
+                    <span class="lang lang-en">
+                      “Who is ahead?” thinking hides your own blessings and feeds envy.
+                    </span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Korunma</div>
+                    <ul class="list">
+                      <li>
+                        Kendini başkalarıyla değil,
+                        <strong>dününle kıyasla</strong>.
+                      </li>
+                      <li>
+                        Her gün en az 3 nimeti yaz veya zihninde say.
+                      </li>
+                      <li>
+                        Başkasının nimeti için bilerek
+                        <strong>“Onun için de hayırlı olsun”</strong> de.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Protection</div>
+                    <ul class="list">
+                      <li>
+                        Compare yourself with
+                        <strong>your yesterday</strong>, not others.
+                      </li>
+                      <li>
+                        List at least 3 blessings daily; train the eye of gratitude.
+                      </li>
+                      <li>
+                        Intentionally say:
+                        <strong>“May it be blessed for them.”</strong>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- RIGHT: Daily practice & notes (shared layout, topic-specific content in JS) -->
+        <aside class="panel" id="side-panel">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">
+                <span class="lang lang-tr">Günlük Uygulama</span>
+                <span class="lang lang-en">Daily Practice</span>
+              </div>
+              <div class="panel-subtitle" id="side-subtitle">
+                <span class="lang lang-tr">
+                  Bugün seçili başlıkta küçük ama gerçek adımlar atalım.
+                </span>
+                <span class="lang lang-en">
+                  Let’s take small but real steps today in the selected topic.
+                </span>
+              </div>
+            </div>
+            <span class="chip" id="current-topic-chip">
+              Şeytan · Shaytan
+            </span>
+          </div>
+
+          <div id="checklist-container" class="checklist">
+            <!-- Filled by JS depending on active tab -->
+          </div>
+
+          <div class="btn-row">
+            <button class="btn btn-accent" id="btn-focus">
+              <span class="btn-icon">✨</span>
+              <span class="lang lang-tr">Bugünün Odağını Seç</span>
+              <span class="lang lang-en">Pick Today’s Focus</span>
+            </button>
+            <button class="btn" id="btn-clear-checks">
+              <span class="btn-icon">🧹</span>
+              <span class="lang lang-tr">İşaretleri Temizle</span>
+              <span class="lang lang-en">Clear Checkboxes</span>
+            </button>
+          </div>
+
+          <div class="focus-box" id="focus-box">
+            <div class="focus-label">
+              <span class="lang lang-tr">GÜNÜN NİYETİ</span>
+              <span class="lang lang-en">TODAY’S INTENTION</span>
+            </div>
+            <div class="focus-text" id="focus-text">
+              <span class="lang lang-tr">
+                Bir oyun seç, bir adım belirle: Bugün sadece
+                <em>bir koruma ilkesini</em> ciddiyetle uygula.
+              </span>
+              <span class="lang lang-en">
+                Choose one game, one response: apply
+                <em>one protection principle</em> with seriousness today.
+              </span>
+            </div>
+          </div>
+
+          <p class="small-note">
+            <span class="lang lang-tr">
+              Aşağıdaki notlar cihazında saklanır; sayfayı kapatsan bile kaybolmaz
+              (tarayıcı verilerini silene kadar).
+            </span>
+            <span class="lang lang-en">
+              Notes below are stored locally in your browser and stay as long as you don’t
+              clear site data.
+            </span>
+          </p>
+
+          <div class="notes-grid">
+            <div class="note-block">
+              <label class="note-label" for="note-awareness">
+                <span class="lang lang-tr">Bugünkü farkındalığım / Today’s awareness</span>
+                <span class="lang lang-en"></span>
+              </label>
+              <textarea id="note-awareness" class="note-textarea"
+                placeholder="Kısaca yaz... / Write briefly..."></textarea>
+            </div>
+            <div class="note-block">
+              <label class="note-label" for="note-trigger">
+                <span class="lang lang-tr">Fark ettiğim bir tetikleyici / A trigger I noticed</span>
+              </label>
+              <textarea id="note-trigger" class="note-textarea"
+                placeholder="Ne tetikledi? / What triggered it?"></textarea>
+            </div>
+            <div class="note-block">
+              <label class="note-label" for="note-gratitude">
+                <span class="lang lang-tr">Şükrettiğim bir şey / One thing I’m grateful for</span>
+              </label>
+              <textarea id="note-gratitude" class="note-textarea"
+                placeholder="Elhamdülillah..."></textarea>
+            </div>
+            <div class="note-block">
+              <label class="note-label" for="note-intent">
+                <span class="lang lang-tr">Yarın için niyetim / My intention for tomorrow</span>
+              </label>
+              <textarea id="note-intent" class="note-textarea"
+                placeholder="Küçük ama net bir adım... / A small but clear step..."></textarea>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <footer class="footer">
+        <div class="footer-row">
+          <div>
+            <span class="lang lang-tr">
+              Bu uygulama, Kur’an merkezli hazırlanan PDF notlarından özetlenmiş bir
+              hatırlatıcıdır; kesin fetva değil, kişisel farkındalık aracıdır.
+            </span>
+            <span class="lang lang-en">
+              This app is a reminder distilled from Qur’an-based study notes; it is a
+              personal awareness tool, not a formal fatwa.
+            </span>
+          </div>
+          <div class="footer-badges">
+            <span class="badge">
+              <span class="badge-dot"></span>
+              <span class="lang lang-tr">Sürekli küçük adımlar</span>
+              <span class="lang lang-en">Tiny steps, every day</span>
+            </span>
+            <span class="badge">
+              <span class="badge-dot"></span>
+              Qur’an · Nefs · Dunya
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    // --- Language toggle ---
+    const bodyEl = document.body;
+    const langButtons = document.querySelectorAll("[data-lang-switch]");
+
+    langButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const lang = btn.getAttribute("data-lang-switch");
+        bodyEl.classList.remove("lang-tr", "lang-en");
+        bodyEl.classList.add("lang-" + lang);
+
+        langButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+      });
+    });
+
+    // --- Tabs and topic-specific side content ---
+
+    const tabButtons = document.querySelectorAll(".tab-btn");
+    const topicSections = document.querySelectorAll(".topic-section");
+    const currentTopicChip = document.getElementById("current-topic-chip");
+    const checklistContainer = document.getElementById("checklist-container");
+    const focusTextEl = document.getElementById("focus-text");
+
+    let currentTopic = "seytan";
+
+    const checklistData = {
+      seytan: [
+        {
+          id: "seytan-isti-aze",
+          trLabel: "İstiâze ve zikir",
+          trDesc:
+            "Vesvese veya günah daveti hissettiğinde en az 3 kez “Eûzü billâhi mine’ş-şeytânirracîm” de ve işine devam et.",
+          enLabel: "Seeking refuge & dhikr",
+          enDesc:
+            "When you feel whispers or pull to sin, say “A‘ūdhu billāhi mina’ş-shayṭāni’r-rajīm” at least 3 times and continue your good action."
+        },
+        {
+          id: "seytan-small-step",
+          trLabel: "Küçük ama net adım",
+          trDesc:
+            "Şeytanın geri tuttuğu bir hayrı seç (tevbe, dua, Kur’an, iyilik) ve bugün en az 2–3 dakikalık halini uygula.",
+          enLabel: "Small but clear step",
+          enDesc:
+            "Pick a good deed Shaytan keeps delaying (tawbah, du‘ā, Qur’an, kindness) and do a 2–3 minute version of it today."
+        },
+        {
+          id: "seytan-circle",
+          trLabel: "Çevre kontrolü",
+          trDesc:
+            "Seni günaha çeken bir ortamı (uygulama, site, sohbet) bugün en azından bir süreliğine kapat ya da kısıtla.",
+          enLabel: "Environment check",
+          enDesc:
+            "Pause or limit at least one environment (app/site/chat) that pulls you strongly toward sin."
+        }
+      ],
+      nefis: [
+        {
+          id: "nefis-dua",
+          trLabel: "Nefis için dua",
+          trDesc:
+            "En az bir kez şu duayı bilinçle yap: “Allah’ım, nefsime takvasını ver ve onu temizle; Sen onu en iyi temizleyensin.”",
+          enLabel: "Dua for the nafs",
+          enDesc:
+            "Say consciously at least once: “O Allah, grant my nafs its taqwā and purify it; You are the best to purify it.”"
+        },
+        {
+          id: "nefis-muhasebe",
+          trLabel: "Mini muhasebe",
+          trDesc:
+            "Günün sonunda 3–5 dakika ayır; dilini, gözünü, kalbini ve öfkeni kısaca gözden geçir, yarın için tek bir düzeltme niyeti koy.",
+          enLabel: "Mini self-review",
+          enDesc:
+            "Spend 3–5 minutes at the end of the day reviewing tongue, gaze, heart, anger and set one intention to adjust tomorrow."
+        },
+        {
+          id: "nefis-kucuk-oruc",
+          trLabel: "Kontrol egzersizi",
+          trDesc:
+            "Bugün helal bir şeyde bile nefsine “hayır” de: gereksiz atıştırmalık, boş scroll, anlamsız video vb.",
+          enLabel: "Control exercise",
+          enDesc:
+            "Tell your nafs “no” in at least one halal but unnecessary area: random snacking, endless scrolling, meaningless videos."
+        }
+      ],
+      dunya: [
+        {
+          id: "dunya-filter",
+          trLabel: "Dünya filtresi soruları",
+          trDesc:
+            "Bugün en önemli kararında şu üç soruyu sor: “Rabbime yaklaştırıyor mu?”, “5 yıl sonra önemi var mı?”, “Kabirde nasıl anılmak isterdim?”",
+          enLabel: "Dunya filter questions",
+          enDesc:
+            "For your most important decision today, ask: “Does this bring me closer to my Lord?”, “Does it matter in 5 years?”, “How would I want this remembered in my grave?”"
+        },
+        {
+          id: "dunya-gratitude",
+          trLabel: "Şükür listesi",
+          trDesc:
+            "En az 3 nimeti isim isim say veya yaz; bilinçli “Elhamdülillah” ile bitir.",
+          enLabel: "Gratitude list",
+          enDesc:
+            "Name or write at least 3 blessings and end with a conscious “Alḥamdulillāh”."
+        },
+        {
+          id: "dunya-time",
+          trLabel: "Zamanı diriltmek",
+          trDesc:
+            "Bugün boş beklediğin bir anda (sırada, yolculukta, yatmadan önce) telefonu bırakıp kısa bir zikir / dua yap.",
+          enLabel: "Revive a moment",
+          enDesc:
+            "During one idle moment today (line, commute, before sleep) put the phone down and make short dhikr/du‘ā instead."
+        }
+      ]
+    };
+
+    const focusItems = {
+      seytan: [
+        {
+          tr: "Bugün vesvese geldiğinde istiâze edip amele devam edeceğim; şeytanın oyunu ibadeti bırakmak değil, işkenceye çevirmekti.",
+          en: "Today when whispers come, I will seek refuge and continue my action; Shaytan’s game was to make worship torture, not to make me closer to God."
+        },
+        {
+          tr: "“Bir kereden bir şey olmaz” cümlesini fark eder etmez duracağım ve tam tersine küçük bir hayır yapacağım.",
+          en: "When I hear “just once won’t hurt”, I will stop and instead do a small good deed on purpose."
+        }
+      ],
+      nefis: [
+        {
+          tr: "“Ben böyleyim” masalını reddedeceğim; nefis terbiye edilebilir ve bugün bunun için küçük bir adım atacağım.",
+          en: "I will reject the story of “this is just me”; the nafs can be trained and today I’ll take one small step towards that."
+        },
+        {
+          tr: "Bugün en az bir yerde nefis bahane ürettiğinde, savunma yapmak yerine içten bir “Evet, burada hatalıyım.” diyeceğim.",
+          en: "At least once today, when my nafs makes excuses, I’ll say: “Yes, I’m wrong here,” instead of defending myself."
+        }
+      ],
+      dunya: [
+        {
+          tr: "Bugün dünyanın süsünü hakikat ile dengeleyeceğim; gösteriş için değil, Allah rızası için güzel davranmaya niyet edeceğim.",
+          en: "Today I will balance dunya’s decoration with truth; I intend beauty for God’s sake, not for show."
+        },
+        {
+          tr: "Sosyal kıyası bırakıp, sadece dünle kendimi karşılaştıracağım; küçük de olsa ilerlemeyi göreceğim.",
+          en: "I will drop social comparison and only compare with my yesterday; even tiny progress counts."
+        }
+      ]
+    };
+
+    function renderChecklist(topic) {
+      checklistContainer.innerHTML = "";
+      const items = checklistData[topic] || [];
+      items.forEach(item => {
+        const wrapper = document.createElement("label");
+        wrapper.className = "check-item";
+
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.dataset.checkId = item.id;
+
+        // restore from localStorage
+        const saved = localStorage.getItem("ht-check-" + item.id);
+        if (saved === "1") checkbox.checked = true;
+
+        checkbox.addEventListener("change", () => {
+          localStorage.setItem("ht-check-" + item.id, checkbox.checked ? "1" : "0");
+        });
+
+        const main = document.createElement("div");
+        main.className = "check-main";
+
+        const labelEl = document.createElement("div");
+        labelEl.className = "check-label";
+        labelEl.innerHTML =
+          '<span class="lang lang-tr">' + item.trLabel + "</span>" +
+          '<span class="lang lang-en">' + item.enLabel + "</span>";
+
+        const descEl = document.createElement("div");
+        descEl.className = "check-desc";
+        descEl.innerHTML =
+          '<span class="lang lang-tr">' + item.trDesc + "</span>" +
+          '<span class="lang lang-en">' + item.enDesc + "</span>";
+
+        main.appendChild(labelEl);
+        main.appendChild(descEl);
+        wrapper.appendChild(checkbox);
+        wrapper.appendChild(main);
+        checklistContainer.appendChild(wrapper);
+      });
+    }
+
+    function updateTopicChip(topic) {
+      if (topic === "seytan") {
+        currentTopicChip.textContent = "Şeytan · Shaytan";
+      } else if (topic === "nefis") {
+        currentTopicChip.textContent = "Nefis · Nafs";
+      } else if (topic === "dunya") {
+        currentTopicChip.textContent = "Dünya · Dunya";
+      }
+    }
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const tab = btn.getAttribute("data-tab");
+        currentTopic = tab;
+
+        tabButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        topicSections.forEach(sec => {
+          if (sec.id === "topic-" + tab) {
+            sec.classList.add("active");
+          } else {
+            sec.classList.remove("active");
+          }
+        });
+
+        updateTopicChip(tab);
+        renderChecklist(tab);
+      });
+    });
+
+    // --- Accordion behavior ---
+    const accordionItems = document.querySelectorAll(".accordion-item");
+
+    accordionItems.forEach(item => {
+      const header = item.querySelector(".accordion-header");
+      const body = item.querySelector("[data-accordion-body]");
+
+      function setMaxHeight(open) {
+        if (!body) return;
+        const inner = body.firstElementChild;
+        if (!inner) return;
+        if (open) {
+          body.style.maxHeight = inner.scrollHeight + 18 + "px";
+        } else {
+          body.style.maxHeight = "0px";
+        }
+      }
+
+      // init state
+      if (item.classList.contains("open")) {
+        setMaxHeight(true);
+      }
+
+      header.addEventListener("click", () => {
+        const isOpen = item.classList.contains("open");
+        accordionItems.forEach(it => {
+          if (it !== item) {
+            it.classList.remove("open");
+            const b = it.querySelector("[data-accordion-body]");
+            if (b) b.style.maxHeight = "0px";
+          }
+        });
+        item.classList.toggle("open");
+        setMaxHeight(!isOpen);
+      });
+
+      window.addEventListener("resize", () => {
+        if (item.classList.contains("open")) {
+          setMaxHeight(true);
+        }
+      });
+    });
+
+    // --- Focus button ---
+
+    const btnFocus = document.getElementById("btn-focus");
+    btnFocus.addEventListener("click", () => {
+      const group = focusItems[currentTopic] || [];
+      if (!group.length) return;
+      const choice = group[Math.floor(Math.random() * group.length)];
+      focusTextEl.innerHTML =
+        '<span class="lang lang-tr">' + choice.tr + "</span>" +
+        '<span class="lang lang-en">' + choice.en + "</span>";
+    });
+
+    // --- Clear checkboxes ---
+
+    const btnClearChecks = document.getElementById("btn-clear-checks");
+    btnClearChecks.addEventListener("click", () => {
+      const checks = checklistContainer.querySelectorAll("input[type=checkbox]");
+      checks.forEach(ch => {
+        ch.checked = false;
+        const id = ch.dataset.checkId;
+        if (id) localStorage.setItem("ht-check-" + id, "0");
+      });
+    });
+
+    // --- Notes localStorage ---
+
+    const noteIds = ["note-awareness", "note-trigger", "note-gratitude", "note-intent"];
+    noteIds.forEach(id => {
+      const el = document.getElementById(id);
+      const key = "ht-note-" + id;
+      const saved = localStorage.getItem(key);
+      if (saved) el.value = saved;
+      el.addEventListener("input", () => {
+        localStorage.setItem(key, el.value);
+      });
+    });
+
+    // Initial render
+    renderChecklist(currentTopic);
+  </script>
+</body>
+</html>
