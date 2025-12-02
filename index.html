@@ -574,6 +574,236 @@
       box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.8);
     }
 
+    /* Meta widgets */
+
+    .top-right {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-end;
+    }
+
+    .streak-card {
+      padding: 8px 12px;
+      border-radius: 14px;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      color: #dcfce7;
+      min-width: 220px;
+      box-shadow: 0 10px 24px rgba(34, 197, 94, 0.15);
+    }
+
+    .streak-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #bbf7d0;
+    }
+
+    .streak-line {
+      margin-top: 3px;
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: baseline;
+    }
+
+    .streak-num {
+      font-weight: 700;
+      color: #86efac;
+    }
+
+    /* Emergency */
+
+    .emergency-bar {
+      margin-top: 14px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(248, 113, 113, 0.35);
+      background: linear-gradient(135deg, rgba(248, 113, 113, 0.08), rgba(15, 23, 42, 0.96));
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: 0 12px 26px rgba(248, 113, 113, 0.2);
+    }
+
+    .emergency-text {
+      font-size: 0.82rem;
+      color: #fecdd3;
+    }
+
+    .emergency-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .emergency-chip {
+      border: 1px solid rgba(248, 113, 113, 0.45);
+      background: rgba(30, 41, 59, 0.8);
+      color: #fecdd3;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      cursor: pointer;
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      transition: transform 0.08s ease, box-shadow 0.12s ease, background 0.12s ease;
+    }
+
+    .emergency-chip:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(248, 113, 113, 0.25);
+      background: rgba(248, 113, 113, 0.18);
+    }
+
+    .emergency-message {
+      border-radius: 12px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.92);
+      padding: 10px 12px;
+      font-size: 0.82rem;
+      color: var(--text-soft);
+    }
+
+    .emergency-steps {
+      margin: 6px 0 0;
+      padding-left: 18px;
+    }
+
+    /* Dua card */
+
+    .dua-card {
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(129, 140, 248, 0.35);
+      background: radial-gradient(circle at 0 0, rgba(59, 130, 246, 0.08), transparent 35%),
+        rgba(15, 23, 42, 0.94);
+      color: var(--text);
+    }
+
+    .dua-title {
+      font-weight: 700;
+      color: #c7d2fe;
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+
+    .dua-body {
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    .dua-arabic {
+      font-size: 1rem;
+      color: #e0e7ff;
+      margin: 6px 0;
+      line-height: 1.8;
+    }
+
+    /* Notes / extra widgets */
+
+    .note-date-row {
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      flex-wrap: wrap;
+    }
+
+    .note-date-row input[type="date"] {
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      border-radius: 10px;
+      color: var(--text);
+      padding: 6px 8px;
+      font-family: var(--font-sans);
+    }
+
+    .breath-card {
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(15, 23, 42, 0.96));
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    .breath-visual {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 50%, rgba(125, 211, 252, 0.35), rgba(59, 130, 246, 0.12));
+      margin: 0 auto;
+      border: 1px solid rgba(125, 211, 252, 0.45);
+      transition: transform 1s ease, opacity 1s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e0f2fe;
+      font-weight: 700;
+    }
+
+    .breath-visual[data-phase="inhale"] {
+      transform: scale(1.08);
+      opacity: 1;
+    }
+
+    .breath-visual[data-phase="hold"] {
+      transform: scale(1.02);
+      opacity: 0.9;
+    }
+
+    .breath-visual[data-phase="exhale"] {
+      transform: scale(0.88);
+      opacity: 0.85;
+    }
+
+    .breath-visual[data-phase="rest"] {
+      transform: scale(0.94);
+      opacity: 0.9;
+    }
+
+    .breath-label {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      line-height: 1.5;
+    }
+
+    .awareness-card {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(74, 222, 128, 0.35);
+      background: rgba(22, 163, 74, 0.06);
+    }
+
+    .awareness-title {
+      font-weight: 700;
+      color: #bbf7d0;
+      margin-bottom: 4px;
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+    }
+
+    .awareness-text {
+      font-size: 0.86rem;
+      color: var(--text-soft);
+      line-height: 1.5;
+    }
+
     .footer {
       margin-top: 14px;
       padding-top: 10px;
@@ -665,18 +895,73 @@
             </span>
           </p>
         </div>
+        <div class="top-right">
+          <div class="lang-toggle" aria-label="Language switch">
+            <span class="lang-toggle-label">
+              <span class="lang lang-tr">DİL</span>
+              <span class="lang lang-en">LANG</span>
+            </span>
+            <div class="lang-toggle-buttons">
+              <button class="lang-btn active" data-lang-switch="tr">TR</button>
+              <button class="lang-btn" data-lang-switch="en">EN</button>
+            </div>
+          </div>
 
-        <div class="lang-toggle" aria-label="Language switch">
-          <span class="lang-toggle-label">
-            <span class="lang lang-tr">DİL</span>
-            <span class="lang lang-en">LANG</span>
-          </span>
-          <div class="lang-toggle-buttons">
-            <button class="lang-btn active" data-lang-switch="tr">TR</button>
-            <button class="lang-btn" data-lang-switch="en">EN</button>
+          <div class="streak-card" id="streak-card">
+            <div class="streak-label">
+              <span class="lang lang-tr">Bugün zinciri</span>
+              <span class="lang lang-en">Today’s streak</span>
+            </div>
+            <div class="streak-line">
+              <span class="lang lang-tr">
+                <span class="streak-num" id="streak-current">0</span> gün üst üste
+              </span>
+              <span class="lang lang-en">
+                <span class="streak-num" id="streak-current-en">0</span> days in a row
+              </span>
+            </div>
+            <div class="streak-line">
+              <span class="lang lang-tr">En iyi: <span class="streak-num" id="streak-best">0</span></span>
+              <span class="lang lang-en">Best: <span class="streak-num" id="streak-best-en">0</span></span>
+            </div>
           </div>
         </div>
       </header>
+
+      <div class="emergency-bar">
+        <div class="emergency-text">
+          <span class="lang lang-tr">Şu anda kandırılıyormuş gibi hissediyorsan, bir tetikleyici seç:</span>
+          <span class="lang lang-en">If you feel you’re being pulled into a trick right now, tap a trigger:</span>
+        </div>
+        <div class="emergency-chips">
+          <button class="emergency-chip" data-trigger="lust">🔥 <span class="lang lang-tr">Şehvet</span><span class="lang lang-en">Lust</span></button>
+          <button class="emergency-chip" data-trigger="anger">⚡ <span class="lang lang-tr">Öfke</span><span class="lang lang-en">Anger</span></button>
+          <button class="emergency-chip" data-trigger="despair">🌑 <span class="lang lang-tr">Umutsuzluk</span><span class="lang lang-en">Despair</span></button>
+          <button class="emergency-chip" data-trigger="comparison">🔍 <span class="lang lang-tr">Kıyas</span><span class="lang lang-en">Comparison</span></button>
+          <button class="emergency-chip" data-trigger="procrastination">⏳ <span class="lang lang-tr">Erteleme</span><span class="lang lang-en">Procrastination</span></button>
+        </div>
+        <div class="emergency-message" id="emergency-message">
+          <div class="lang lang-tr">Sakin kal, bir tetikleyici seç ve 3 adımlı mikro protokolü uygula.</div>
+          <div class="lang lang-en">Stay calm, pick a trigger and follow the 3-step micro-protocol.</div>
+        </div>
+      </div>
+
+      <div class="dua-card">
+        <div class="dua-title">
+          <span class="lang lang-tr">Korunma Duası</span>
+          <span class="lang lang-en">Protection Dua</span>
+        </div>
+        <div class="dua-body">
+          <div class="dua-arabic">رَبَّنَا لَا تُزِغْ قُلُوبَنَا بَعْدَ إِذْ هَدَيْتَنَا وَهَبْ لَنَا مِنْ لَدُنْكَ رَحْمَةً ۚ إِنَّكَ أَنْتَ الْوَهَّابُ</div>
+          <div>
+            <em>Rabbana la tuzigh qulubana ba‘da idh hadaytana wa hab lana min ladunka rahmah, innaka anta al-Wahhab.</em>
+          </div>
+          <div>
+            <span class="lang lang-tr">Rabbimiz, bizi hidayete erdirdikten sonra kalplerimizi eğriltme; bize katından rahmet bağışla. Şüphesiz bağışı bol olan Sensin.</span>
+            <span class="lang lang-en">Our Lord, do not let our hearts deviate after You have guided us, and grant us mercy from Yourself. Truly, You are the Bestower.</span>
+          </div>
+        </div>
+      </div>
 
       <nav class="tabs" aria-label="Topic selector">
         <button class="tab-btn active" data-tab="seytan">
@@ -751,7 +1036,7 @@
 
           <div class="accordion">
             <!-- Game 1 -->
-            <article class="accordion-item open">
+            <article class="accordion-item open" id="seytan-game-1">
               <div class="accordion-header">
                 <div class="accordion-main">
                   <div class="accordion-title">
@@ -852,7 +1137,7 @@
             </article>
 
             <!-- Game 2 -->
-            <article class="accordion-item">
+            <article class="accordion-item" id="seytan-game-2">
               <div class="accordion-header">
                 <div class="accordion-main">
                   <div class="accordion-title">
@@ -940,7 +1225,7 @@
             </article>
 
             <!-- Game 3: Vesvese -->
-            <article class="accordion-item">
+            <article class="accordion-item" id="seytan-game-3">
               <div class="accordion-header">
                 <div class="accordion-main">
                   <div class="accordion-title">
@@ -1017,7 +1302,356 @@
               </div>
             </article>
 
-            <!-- You can add more games similarly if you like later -->
+            <!-- Additional games -->
+            <article class="accordion-item" id="seytan-game-4">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 4</span>
+                      <span class="lang lang-en">GAME 4</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Erteleme ve Uyuşturma</span>
+                      <span class="lang lang-en">Procrastination & Numbing</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">Hayrı ertelerken, günahı ve boşluğu “şimdi”ye çeker.</span>
+                    <span class="lang lang-en">Delays good deeds and brings sin and distraction into “now”.</span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Psikoloji</div>
+                    <ul class="list">
+                      <li>Sürekli yorgunluk bahaneleri ile tevbe ve ibadet ertelenir.</li>
+                      <li>Dizi, oyun ve sosyal medya uyaranları vicdan sesini uyuşturur.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Korunma</div>
+                    <ul class="list">
+                      <li>“İki dakikalık kural”: hayır aklına gelince 2–3 dakikasını hemen yap.</li>
+                      <li>Tevbeyi erteleme, uygun ruh halini bekleme; adım at, duygu arkadan gelir.</li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Psychology</div>
+                    <ul class="list">
+                      <li>Constant tiredness and excuses postpone repentance and worship.</li>
+                      <li>Series, games and social media numb the call to change.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Protection</div>
+                    <ul class="list">
+                      <li>Use the “two-minute rule”: when a good deed comes, do 2–3 minutes of it immediately.</li>
+                      <li>Don’t wait for the perfect mood; move first and let feelings follow.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item" id="seytan-game-5">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 5</span>
+                      <span class="lang lang-en">GAME 5</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Korku ve Fakirlik Tehdidi</span>
+                      <span class="lang lang-en">Fear and Poverty Threat</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">İnfak ve itaate karşı “ya zarar görürsen” fısıltısı.</span>
+                    <span class="lang lang-en">Whispering “you’ll lose” when you want to give or obey.</span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Psikoloji</div>
+                    <ul class="list">
+                      <li>Rızık korkusu cimriliği ve riskten kaçışı doğurur.</li>
+                      <li>Başkası için harcarken huzursuzluk, kendine harcarken aşırı rahatlık.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Korunma</div>
+                    <ul class="list">
+                      <li>Rızkın kaynağının Allah olduğunu sıkça tefekkür et.</li>
+                      <li>Küçük ama düzenli sadaka alışkanlığı oluştur.</li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Psychology</div>
+                    <ul class="list">
+                      <li>Fear of scarcity fuels miserliness and risk-avoidance.</li>
+                      <li>Spending on self feels easy; spending for others feels frightening.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Protection</div>
+                    <ul class="list">
+                      <li>Reflect often that true provision comes from Allah alone.</li>
+                      <li>Build a habit of small but regular charity, even symbolic amounts.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item" id="seytan-game-6">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 6</span>
+                      <span class="lang lang-en">GAME 6</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Umutsuzluk veya Aşırı Güven</span>
+                      <span class="lang lang-en">Despair or False Security</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">Ya “Ben bittim” der, ya da “Nasıl olsa affolurum” der.</span>
+                    <span class="lang lang-en">Either “I’m doomed” or “I can sin, I’ll be forgiven anyway”.</span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Psikoloji</div>
+                    <ul class="list">
+                      <li>Büyük günah sonrası “artık dönüş yok” hissi tevbeden kaçırır.</li>
+                      <li>“Allah Gafûr’dur” cümlesiyle günah planlanır.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Korunma</div>
+                    <ul class="list">
+                      <li>Umut ve korkuyu dengeleyen ayetleri sıkça oku.</li>
+                      <li>Her günün sonunda kısa bir tevbe ve istiğfar ile kapanış yap.</li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Psychology</div>
+                    <ul class="list">
+                      <li>After sin, “no way back” feeling blocks repentance.</li>
+                      <li>“God is Forgiving” is misused to plan sins.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Protection</div>
+                    <ul class="list">
+                      <li>Read verses that balance hope and fear regularly.</li>
+                      <li>End your day with repentance and seeking forgiveness.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item" id="seytan-game-7">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 7</span>
+                      <span class="lang lang-en">GAME 7</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Öfke ve Acele</span>
+                      <span class="lang lang-en">Anger and Hastiness</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">Bir anlık öfkeyle, yıllarca sürecek yaralar açmak.</span>
+                    <span class="lang lang-en">One moment of anger causing wounds that last for years.</span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Psikoloji</div>
+                    <ul class="list">
+                      <li>Öfke anında düşünme kapasitesi daralır, kelimeler mermi gibi fırlar.</li>
+                      <li>Acele kararlar, pişmanlık ve suçluluk döngüsünü besler.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Korunma</div>
+                    <ul class="list">
+                      <li>“Gerçek karar”ı öfke geçtikten sonraya ertele.</li>
+                      <li>Dur, pozisyonunu değiştir; mümkünse abdest al.</li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Psychology</div>
+                    <ul class="list">
+                      <li>In anger, cognitive narrowing causes harsh words/actions.</li>
+                      <li>Hasty decisions feed regret and self-blame.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Protection</div>
+                    <ul class="list">
+                      <li>Delay important decisions until the emotional wave passes.</li>
+                      <li>Change posture or location; if possible, make wudu.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item" id="seytan-game-8">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 8</span>
+                      <span class="lang lang-en">GAME 8</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Şehvet ve Hayasızlık</span>
+                      <span class="lang lang-en">Lust and Shamelessness</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">Göz, kulak ve kalp üzerinden mahremiyeti yıkmak.</span>
+                    <span class="lang lang-en">Attacking modesty through eyes, ears and heart.</span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Psikoloji</div>
+                    <ul class="list">
+                      <li>Sürekli erotik uyaran, normal ilişkileri de bozar.</li>
+                      <li>Yalnızlık ve stres anları tetikleyici olur.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Korunma</div>
+                    <ul class="list">
+                      <li>Ortamı değiştir, mahremiyeti ihlal eden kaynakları kökten kısıtla.</li>
+                      <li>“Allah’ım gözümü, kalbimi ve bedenimi haramdan koru.” duasını sıkça yap.</li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Psychology</div>
+                    <ul class="list">
+                      <li>Constant erotic stimulation distorts expectations and damages relationships.</li>
+                      <li>Loneliness and stress become triggers.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Protection</div>
+                    <ul class="list">
+                      <li>Change environment and limit access to explicit content at the root.</li>
+                      <li>Make frequent dua: “O Allah, protect my eyes, heart, and body from haram.”</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item" id="seytan-game-9">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 9</span>
+                      <span class="lang lang-en">GAME 9</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">İnsanları Birbirine Düşürmek</span>
+                      <span class="lang lang-en">Dividing People</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">Gıybet, zan, kıskançlık ve kıyas ile kalpleri yakmak.</span>
+                    <span class="lang lang-en">Backbiting, suspicion, envy and comparison burning hearts.</span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Psikoloji</div>
+                    <ul class="list">
+                      <li>Gıybet ve zan görünmez ama kalıcı mesafe üretir.</li>
+                      <li>Kıskançlık, başkasının nimeti üzerinden kendini değersiz hissettirir.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Korunma</div>
+                    <ul class="list">
+                      <li>Konuşmadan önce “Doğru mu, gerekli mi, faydalı mı?” filtresini kullan.</li>
+                      <li>İçinden bile olsa “Onun için hayırlı olsun.” de.</li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Psychology</div>
+                    <ul class="list">
+                      <li>Backbiting and suspicion create invisible, lasting distance.</li>
+                      <li>Envy makes others’ blessings feel like a threat to your worth.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Protection</div>
+                    <ul class="list">
+                      <li>Filter speech: “Is it true, necessary, beneficial?”</li>
+                      <li>Silently pray “May it be good for them” when you see someone’s blessing.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item" id="seytan-game-10">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 10</span>
+                      <span class="lang lang-en">GAME 10</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Boş İşlerle Oyalamak ve Zamanı Çalmak</span>
+                      <span class="lang lang-en">Distracting with Futile Activities</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">Saatleri doyurmadan, yılları tüketmek.</span>
+                    <span class="lang lang-en">Consuming years without truly feeding the soul.</span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Psikoloji</div>
+                    <ul class="list">
+                      <li>Sürekli oyalama zihni uyuşturur, derin tefekkür için alan kalmaz.</li>
+                      <li>Kaliteli ilişki ve anlamlı işler için zaman yok olur.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Korunma</div>
+                    <ul class="list">
+                      <li>Her gün en az 10 dakikalık dijitalsiz “sessiz zaman” belirle.</li>
+                      <li>“Kaliteli zaman” listesi yap: tefekkür, ilim, aile, hizmet vb.</li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Psychology</div>
+                    <ul class="list">
+                      <li>Endless scrolling and trivial content numb the mind.</li>
+                      <li>Leaves no space for reflection and meaningful relationships.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Protection</div>
+                    <ul class="list">
+                      <li>Set at least 10 minutes per day of screen-free silence.</li>
+                      <li>Keep a “quality time” list: reflection, learning, family, friends, service.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
 
@@ -1046,7 +1680,7 @@
 
           <div class="accordion">
             <!-- Nefis game 1 -->
-            <article class="accordion-item open">
+            <article class="accordion-item open" id="nefis-game-1">
               <div class="accordion-header">
                 <div class="accordion-main">
                   <div class="accordion-title">
@@ -1130,7 +1764,7 @@
             </article>
 
             <!-- Nefis game 2: erteleme -->
-            <article class="accordion-item">
+            <article class="accordion-item" id="nefis-game-2">
               <div class="accordion-header">
                 <div class="accordion-main">
                   <div class="accordion-title">
@@ -1203,6 +1837,256 @@
                 </div>
               </div>
             </article>
+
+            <article class="accordion-item" id="nefis-game-3">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 3</span>
+                      <span class="lang lang-en">GAME 3</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Hevâyı İlâh Edinmek</span>
+                      <span class="lang lang-en">Taking Desire as a God</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">Canım ne isterse odur; istemiyorsam yoktur.</span>
+                    <span class="lang lang-en">If I feel like it, it’s right; if I don’t, it’s out.</span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Psikoloji</div>
+                    <ul class="list">
+                      <li>Nefis, keyfi son otorite yapar; vahyin ölçüsü geri planda kalır.</li>
+                      <li>Zor ama doğru olandan kaçma eğilimi artar.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Korunma</div>
+                    <ul class="list">
+                      <li>“Keyfim ne istiyor?” ve “Rabbim ne buyuruyor?” sorularını yan yana düşün.</li>
+                      <li>Zor ama doğru bir işi özellikle seç: özür dilemek, haram kazancı reddetmek vb.</li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Psychology</div>
+                    <ul class="list">
+                      <li>Desire becomes the final authority, revelation is sidelined.</li>
+                      <li>Greater tendency to avoid difficult but right actions.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Protection</div>
+                    <ul class="list">
+                      <li>Compare honestly: what do I want vs. what does Allah command?</li>
+                      <li>Choose a difficult but right action intentionally.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item" id="nefis-game-4">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 4</span>
+                      <span class="lang lang-en">GAME 4</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Bahane Üretme ve Akla Avukatlık Yaptırmak</span>
+                      <span class="lang lang-en">Excuse-Making & Using Intellect as Lawyer</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">Nefis yapmak isteyip akıl gerekçelendirsin.</span>
+                    <span class="lang lang-en">The nafs decides; intellect only justifies.</span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Psikoloji</div>
+                    <ul class="list">
+                      <li>Hatalı davranış için çok zeki açıklamalar bulmak.</li>
+                      <li>“Ben aslında haklıyım” iç sesi değişimi engeller.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Korunma</div>
+                    <ul class="list">
+                      <li>İçinden “Nerede hatalı olabilirim?” sorusunu ciddiyetle sor.</li>
+                      <li>Güvendiğin birine “Benim göremediğim hatam var mı?” diye sor.</li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Psychology</div>
+                    <ul class="list">
+                      <li>Creating clever justifications for clearly wrong behavior.</li>
+                      <li>Inner “I’m actually right” voice blocks growth.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Protection</div>
+                    <ul class="list">
+                      <li>Ask honestly: “Where could I be wrong in this?”</li>
+                      <li>Invite feedback from someone you trust.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item" id="nefis-game-5">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 5</span>
+                      <span class="lang lang-en">GAME 5</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Kıyas ve Kıskançlıkla Yakmak</span>
+                      <span class="lang lang-en">Burning with Comparison and Envy</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">Başkasının nimetiyle kendi kalbini yakmak.</span>
+                    <span class="lang lang-en">Burning your own heart over others’ blessings.</span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Psikoloji</div>
+                    <ul class="list">
+                      <li>Sosyal medya sürekli kıyas zeminidir.</li>
+                      <li>Nefis, başkasının artısını kendi eksisi gibi hissettirir.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Korunma</div>
+                    <ul class="list">
+                      <li>“Kiminle kıyaslıyorum?” sorusunu fark et; odağı kendi ilerlemene çevir.</li>
+                      <li>Kıskançlık anında “Allah’ım onun için bereketli kıl.” diye dua et.</li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Psychology</div>
+                    <ul class="list">
+                      <li>Social media creates a constant comparison arena.</li>
+                      <li>The nafs makes someone else’s plus feel like your minus.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Protection</div>
+                    <ul class="list">
+                      <li>Notice who you compare with and redirect to your own progress.</li>
+                      <li>When envy appears, pray consciously: “O Allah, bless them in what they have.”</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item" id="nefis-game-6">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 6</span>
+                      <span class="lang lang-en">GAME 6</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Vicdanı Umutsuzluğa Çevirmek</span>
+                      <span class="lang lang-en">Turning Conscience into Despair</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">Faydalı pişmanlığı, yıkıcı öz-nefrete dönüştürmek.</span>
+                    <span class="lang lang-en">Turning healthy remorse into self-hatred.</span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Psikoloji</div>
+                    <ul class="list">
+                      <li>“Ben zaten bozuk biriyim” hissi yeni adımları engeller.</li>
+                      <li>Sürekli suçluluk, ibadet ve iyilikten uzaklaştırır.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Korunma</div>
+                    <ul class="list">
+                      <li>Hatanı kabul et ama kimliğini hatanla tanımlama.</li>
+                      <li>Küçük bir telafi adımı belirle ve hemen yap (sadaka, özür, dua).</li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Psychology</div>
+                    <ul class="list">
+                      <li>Feeling “I’m inherently broken” blocks new efforts.</li>
+                      <li>Chronic guilt leads to avoiding worship and good deeds.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Protection</div>
+                    <ul class="list">
+                      <li>Admit the mistake but refuse to define your identity by it.</li>
+                      <li>Choose one small act of repair (charity, apology, prayer) and do it now.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item" id="nefis-game-7">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 7</span>
+                      <span class="lang lang-en">GAME 7</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Riyâ ve Gurur ile Dini Egoya Çevirmek</span>
+                      <span class="lang lang-en">Turning Religion into Ego</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">İbadeti alkış ve üstünlük için yapmak.</span>
+                    <span class="lang lang-en">Doing worship for applause and superiority.</span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Psikoloji</div>
+                    <ul class="list">
+                      <li>Nefis, dini başarıyı “ben üstünüm” malzemesi yapar.</li>
+                      <li>İbadet gizliyken zor, görünürken kolay gelir.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Korunma</div>
+                    <ul class="list">
+                      <li>Bazı ibadetlerini bilinçli olarak gizli tut.</li>
+                      <li>Başarılarını anlatırken “Rabbim lütfetti” vurgusu yap.</li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Psychology</div>
+                    <ul class="list">
+                      <li>Uses religious success to feel superior.</li>
+                      <li>Worship feels easier when observed, harder in private.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Protection</div>
+                    <ul class="list">
+                      <li>Keep some acts of worship strictly hidden from everyone.</li>
+                      <li>Emphasize “My Lord enabled this” instead of “I did it”.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
           </div>
         </section>
 
@@ -1231,7 +2115,7 @@
 
           <div class="accordion">
             <!-- Dunya game 1 -->
-            <article class="accordion-item open">
+            <article class="accordion-item open" id="dunya-game-1">
               <div class="accordion-header">
                 <div class="accordion-main">
                   <div class="accordion-title">
@@ -1306,7 +2190,7 @@
             </article>
 
             <!-- Dunya game 2: comparison -->
-            <article class="accordion-item">
+            <article class="accordion-item" id="dunya-game-2">
               <div class="accordion-header">
                 <div class="accordion-main">
                   <div class="accordion-title">
@@ -1362,6 +2246,256 @@
                         Intentionally say:
                         <strong>“May it be blessed for them.”</strong>
                       </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item" id="dunya-game-3">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 3</span>
+                      <span class="lang lang-en">GAME 3</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Anlık Haz – Erteleme Oyunu</span>
+                      <span class="lang lang-en">Instant Pleasure – Postponing the Important</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">“Şimdi eğlen, sonra toparlarsın” fısıltısı.</span>
+                    <span class="lang lang-en">Whisper of “enjoy now, you can fix later”.</span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Psikoloji</div>
+                    <ul class="list">
+                      <li>Kısa vadeli haz, uzun vadeli hedefleri sürekli erteler.</li>
+                      <li>“Hayatı yaşamak” bahanesiyle sorumluluklardan kaçılır.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Korunma</div>
+                    <ul class="list">
+                      <li>Gün içindeki en önemli 1–2 sorumluluğu belirle ve önce onları yap.</li>
+                      <li>Eğlenceyi ödül gibi kullan; görev sonrası ve sınırlı süre.</li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Psychology</div>
+                    <ul class="list">
+                      <li>Short-term pleasure repeatedly delays long-term goals.</li>
+                      <li>“Living life” becomes an excuse to avoid responsibility.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Protection</div>
+                    <ul class="list">
+                      <li>Identify the top 1–2 priorities for the day and do them first.</li>
+                      <li>Use entertainment as a reward after duty, with clear limits.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item" id="dunya-game-4">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 4</span>
+                      <span class="lang lang-en">GAME 4</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Gaflet – Sürekli Meşgul Et ki Düşünemesin</span>
+                      <span class="lang lang-en">Heedlessness – Constant Busyness</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">Hiç düşünemeyecek kadar doldurulmuş zihin.</span>
+                    <span class="lang lang-en">A mind too busy to think deeply.</span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Psikoloji</div>
+                    <ul class="list">
+                      <li>Sürekli bildirim, içerik, toplantı; içe dönüş için alan kalmaz.</li>
+                      <li>Ruh yorgunluğu sadece fiziksel yorgunluk sanılır.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Korunma</div>
+                    <ul class="list">
+                      <li>Günde 5–10 dakikalık sessiz düşünme zamanı ayır (telefon uzakta).</li>
+                      <li>“Bu gün beni ahirete nasıl hazırladı?” sorusunu tefekkür et.</li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Psychology</div>
+                    <ul class="list">
+                      <li>Notifications and content leave no room for reflection.</li>
+                      <li>Spiritual exhaustion is misread as physical tiredness.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Protection</div>
+                    <ul class="list">
+                      <li>Reserve 5–10 minutes of silent thinking daily with phone away.</li>
+                      <li>Reflect: “How did today prepare me for the Hereafter?”</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item" id="dunya-game-5">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 5</span>
+                      <span class="lang lang-en">GAME 5</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Sonsuzluk Yanılsaması</span>
+                      <span class="lang lang-en">Illusion of Endless Time</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">Ölümü ve sonu hiç gelmeyecek gibi yaşamak.</span>
+                    <span class="lang lang-en">Living as if endings will never arrive.</span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Psikoloji</div>
+                    <ul class="list">
+                      <li>Planlar hep ileri tarihe atılır; gerçek öncelikler görünmez bir “sonra”ya itilir.</li>
+                      <li>“Şimdi” hiçbir zaman gelmez.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Korunma</div>
+                    <ul class="list">
+                      <li>Kısa ama sık ölüm tefekkürü yap; ayet oku, mümkünse mezar ziyareti.</li>
+                      <li>Ömür hedefini bu haftalık küçük adımlara çevir.</li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Psychology</div>
+                    <ul class="list">
+                      <li>Plans are always pushed to the future; true priorities are delayed.</li>
+                      <li>“Now” never truly comes.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Protection</div>
+                    <ul class="list">
+                      <li>Practice short but frequent reflection on death.</li>
+                      <li>Break life-long goals into small steps for this week.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item" id="dunya-game-6">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 6</span>
+                      <span class="lang lang-en">GAME 6</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Kimlik Oyunu – “Sen İşin ve Ünvanınsın”</span>
+                      <span class="lang lang-en">Identity Game – You Are Your Job</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">İnsanı sadece meslek ve başarıya indirgemek.</span>
+                    <span class="lang lang-en">Reducing the human being to job and achievement.</span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Psikoloji</div>
+                    <ul class="list">
+                      <li>İş/başarı kaybı kimlik krizi gibi hissedilir.</li>
+                      <li>İnsan kendini “kul” olarak değil, “ünvan” olarak görmeye başlar.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Korunma</div>
+                    <ul class="list">
+                      <li>Niyetini tazele: “Ben önce kulum, sonra mesleğim.”</li>
+                      <li>Ünvan yerine ahlak üzerinden kendini tanımlamaya çalış.</li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Psychology</div>
+                    <ul class="list">
+                      <li>Losing a job feels like losing self-worth.</li>
+                      <li>Identity is tied to title instead of servitude to God.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Protection</div>
+                    <ul class="list">
+                      <li>Renew intention: “I am a servant of Allah first, then my profession.”</li>
+                      <li>Define yourself more by character than career.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <article class="accordion-item" id="dunya-game-7">
+              <div class="accordion-header">
+                <div class="accordion-main">
+                  <div class="accordion-title">
+                    <span class="accordion-pill">
+                      <span class="lang lang-tr">OYUN 7</span>
+                      <span class="lang lang-en">GAME 7</span>
+                    </span>
+                    <span>
+                      <span class="lang lang-tr">Kontrol ve Güvenlik Yanılsaması</span>
+                      <span class="lang lang-en">Illusion of Control and Security</span>
+                    </span>
+                  </div>
+                  <div class="accordion-sub">
+                    <span class="lang lang-tr">Her şeyi garanti altına aldığını sanmak.</span>
+                    <span class="lang lang-en">Believing everything is fully under your control.</span>
+                  </div>
+                </div>
+                <div class="accordion-icon">›</div>
+              </div>
+              <div class="accordion-body" data-accordion-body>
+                <div class="accordion-body-inner dual">
+                  <div class="lang-block lang-tr">
+                    <div class="badge"><span class="badge-dot"></span> Psikoloji</div>
+                    <ul class="list">
+                      <li>Aşırı planlama hafif bir değişiklikte bile panik üretir.</li>
+                      <li>Nimetler garanti sanıldığı için şükür zayıflar.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Korunma</div>
+                    <ul class="list">
+                      <li>Sebeplere sarılırken sonucu Allah’tan bekleme bilincini diri tut.</li>
+                      <li>“Elhamdülillah” cümlesini günlük dile yerleştir.</li>
+                    </ul>
+                  </div>
+                  <div class="lang-block lang-en">
+                    <div class="badge"><span class="badge-dot"></span> Psychology</div>
+                    <ul class="list">
+                      <li>Hyper-planning leads to panic when things shift.</li>
+                      <li>Blessings feel guaranteed; gratitude fades.</li>
+                    </ul>
+                    <div class="badge" style="margin-top:6px;"><span class="badge-dot"></span> Protection</div>
+                    <ul class="list">
+                      <li>Take the means but expect outcomes from Allah.</li>
+                      <li>Make gratitude phrases frequent: “Alhamdulillah, today I still have…”</li>
                     </ul>
                   </div>
                 </div>
@@ -1426,16 +2560,49 @@
             </div>
           </div>
 
+          <div class="breath-card" id="breath-card">
+            <div class="breath-visual" id="breath-visual" data-phase="rest">4·4·4·4</div>
+            <div class="breath-label" id="breath-label">
+              <span class="lang lang-tr">4 saniye AL · 4 tut · 4 ver · 4 bekle</span>
+              <span class="lang lang-en">Inhale 4 · Hold 4 · Exhale 4 · Hold 4</span>
+            </div>
+            <div class="btn-row">
+              <button class="btn" id="breath-toggle">
+                <span class="btn-icon">💨</span>
+                <span class="lang lang-tr">Başlat / Durdur</span>
+                <span class="lang lang-en">Start / Stop</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="awareness-card">
+            <div class="awareness-title">
+              <span class="lang lang-tr">Farkındalık Sorusu</span>
+              <span class="lang lang-en">Awareness Question</span>
+            </div>
+            <div class="awareness-text" id="awareness-text">
+              <span class="lang lang-tr">Bugün için küçük bir yansıma sorusu seçiliyor...</span>
+              <span class="lang lang-en">Picking a small reflection question for today...</span>
+            </div>
+          </div>
+
           <p class="small-note">
             <span class="lang lang-tr">
-              Aşağıdaki notlar cihazında saklanır; sayfayı kapatsan bile kaybolmaz
-              (tarayıcı verilerini silene kadar).
+              Tarihe göre notları saklayabilirsin; cihazında kalır, tarayıcı verilerini
+              silene kadar kaybolmaz.
             </span>
             <span class="lang lang-en">
-              Notes below are stored locally in your browser and stay as long as you don’t
-              clear site data.
+              Notes are stored per date on your device and stay unless you clear site data.
             </span>
           </p>
+
+          <div class="note-date-row">
+            <span class="lang lang-tr">Tarih seç:</span>
+            <span class="lang lang-en">Pick a date:</span>
+            <input type="date" id="note-date" />
+            <span class="lang lang-tr">Her günün notu ayrı saklanır.</span>
+            <span class="lang lang-en">Each day keeps its own note set.</span>
+          </div>
 
           <div class="notes-grid">
             <div class="note-block">
@@ -1524,6 +2691,68 @@
     const focusTextEl = document.getElementById("focus-text");
 
     let currentTopic = "seytan";
+
+    // --- Streak helpers ---
+    const streakCurrentEl = document.getElementById("streak-current");
+    const streakCurrentEnEl = document.getElementById("streak-current-en");
+    const streakBestEl = document.getElementById("streak-best");
+    const streakBestEnEl = document.getElementById("streak-best-en");
+
+    function getTodayDateKey() {
+      const d = new Date();
+      const y = d.getFullYear();
+      const m = String(d.getMonth() + 1).padStart(2, "0");
+      const day = String(d.getDate()).padStart(2, "0");
+      return `${y}-${m}-${day}`;
+    }
+
+    function dateFromKey(key) {
+      const [y, m, d] = key.split("-").map(Number);
+      return new Date(y, m - 1, d);
+    }
+
+    function dayDiff(a, b) {
+      const diff = a.getTime() - b.getTime();
+      return Math.round(diff / (1000 * 60 * 60 * 24));
+    }
+
+    function updateStreakDisplay() {
+      const current = parseInt(localStorage.getItem("ht-streak-current") || "0", 10) || 0;
+      const best = parseInt(localStorage.getItem("ht-streak-best") || "0", 10) || 0;
+      streakCurrentEl.textContent = current;
+      streakCurrentEnEl.textContent = current;
+      streakBestEl.textContent = best;
+      streakBestEnEl.textContent = best;
+    }
+
+    function registerDailyActivity() {
+      const today = getTodayDateKey();
+      let last = localStorage.getItem("ht-streak-last-date");
+      let current = parseInt(localStorage.getItem("ht-streak-current") || "0", 10) || 0;
+      let best = parseInt(localStorage.getItem("ht-streak-best") || "0", 10) || 0;
+
+      if (!last) {
+        current = 1;
+        best = Math.max(best, current);
+        last = today;
+      } else if (last === today) {
+        // no change
+      } else {
+        const diff = dayDiff(dateFromKey(today), dateFromKey(last));
+        if (diff === 1) {
+          current += 1;
+        } else {
+          current = 1;
+        }
+        last = today;
+        best = Math.max(best, current);
+      }
+
+      localStorage.setItem("ht-streak-current", current);
+      localStorage.setItem("ht-streak-best", best);
+      localStorage.setItem("ht-streak-last-date", last);
+      updateStreakDisplay();
+    }
 
     const checklistData = {
       seytan: [
@@ -1665,6 +2894,7 @@
 
         checkbox.addEventListener("change", () => {
           localStorage.setItem("ht-check-" + item.id, checkbox.checked ? "1" : "0");
+          if (checkbox.checked) registerDailyActivity();
         });
 
         const main = document.createElement("div");
@@ -1721,48 +2951,53 @@
       });
     });
 
+    function goToTab(tab) {
+      const btn = document.querySelector(`.tab-btn[data-tab="${tab}"]`);
+      if (btn) btn.click();
+    }
+
     // --- Accordion behavior ---
     const accordionItems = document.querySelectorAll(".accordion-item");
 
+    function setAccordionState(item, open) {
+      const body = item.querySelector("[data-accordion-body]");
+      if (!body) return;
+      const inner = body.firstElementChild;
+      if (!inner) return;
+      if (open) {
+        body.style.maxHeight = inner.scrollHeight + 18 + "px";
+        item.classList.add("open");
+      } else {
+        body.style.maxHeight = "0px";
+        item.classList.remove("open");
+      }
+    }
+
     accordionItems.forEach(item => {
       const header = item.querySelector(".accordion-header");
-      const body = item.querySelector("[data-accordion-body]");
-
-      function setMaxHeight(open) {
-        if (!body) return;
-        const inner = body.firstElementChild;
-        if (!inner) return;
-        if (open) {
-          body.style.maxHeight = inner.scrollHeight + 18 + "px";
-        } else {
-          body.style.maxHeight = "0px";
-        }
-      }
-
-      // init state
-      if (item.classList.contains("open")) {
-        setMaxHeight(true);
-      }
+      if (!header) return;
+      setAccordionState(item, item.classList.contains("open"));
 
       header.addEventListener("click", () => {
         const isOpen = item.classList.contains("open");
         accordionItems.forEach(it => {
-          if (it !== item) {
-            it.classList.remove("open");
-            const b = it.querySelector("[data-accordion-body]");
-            if (b) b.style.maxHeight = "0px";
-          }
+          setAccordionState(it, it === item ? !isOpen : false);
         });
-        item.classList.toggle("open");
-        setMaxHeight(!isOpen);
       });
 
       window.addEventListener("resize", () => {
-        if (item.classList.contains("open")) {
-          setMaxHeight(true);
-        }
+        if (item.classList.contains("open")) setAccordionState(item, true);
       });
     });
+
+    function openAccordionById(id) {
+      const target = document.getElementById(id);
+      if (!target) return;
+      accordionItems.forEach(it => {
+        setAccordionState(it, it === target);
+      });
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
 
     // --- Focus button ---
 
@@ -1774,6 +3009,7 @@
       focusTextEl.innerHTML =
         '<span class="lang lang-tr">' + choice.tr + "</span>" +
         '<span class="lang lang-en">' + choice.en + "</span>";
+      registerDailyActivity();
     });
 
     // --- Clear checkboxes ---
@@ -1788,21 +3024,275 @@
       });
     });
 
-    // --- Notes localStorage ---
+    // --- Notes localStorage with date ---
 
     const noteIds = ["note-awareness", "note-trigger", "note-gratitude", "note-intent"];
+    const noteDateInput = document.getElementById("note-date");
+    let activeNoteDate = getTodayDateKey();
+    let noteActivityDate = localStorage.getItem("ht-note-activity-date") || "";
+
+    function noteKey(date, id) {
+      return `ht-note-${date}-${id}`;
+    }
+
+    function loadNotesForDate(date) {
+      noteIds.forEach(id => {
+        const el = document.getElementById(id);
+        const stored = localStorage.getItem(noteKey(date, id));
+        if (stored !== null) {
+          el.value = stored;
+        } else if (date === getTodayDateKey()) {
+          const legacy = localStorage.getItem("ht-note-" + id);
+          el.value = legacy || "";
+        } else {
+          el.value = "";
+        }
+      });
+    }
+
+    function handleNoteInput(id, value) {
+      localStorage.setItem(noteKey(activeNoteDate, id), value);
+      if (value.trim() && noteActivityDate !== activeNoteDate) {
+        registerDailyActivity();
+        noteActivityDate = activeNoteDate;
+        localStorage.setItem("ht-note-activity-date", noteActivityDate);
+      }
+    }
+
+    noteDateInput.value = activeNoteDate;
+    noteDateInput.addEventListener("change", () => {
+      activeNoteDate = noteDateInput.value || getTodayDateKey();
+      loadNotesForDate(activeNoteDate);
+    });
+
     noteIds.forEach(id => {
       const el = document.getElementById(id);
-      const key = "ht-note-" + id;
-      const saved = localStorage.getItem(key);
-      if (saved) el.value = saved;
-      el.addEventListener("input", () => {
-        localStorage.setItem(key, el.value);
+      el.addEventListener("input", () => handleNoteInput(id, el.value));
+    });
+
+    loadNotesForDate(activeNoteDate);
+
+    // --- Breathing widget ---
+    const breathToggle = document.getElementById("breath-toggle");
+    const breathVisual = document.getElementById("breath-visual");
+    const breathLabel = document.getElementById("breath-label");
+    const breathPhases = [
+      { key: "inhale", tr: "4 saniye nefes al", en: "Inhale 4" },
+      { key: "hold", tr: "4 saniye tut", en: "Hold 4" },
+      { key: "exhale", tr: "4 saniye ver", en: "Exhale 4" },
+      { key: "rest", tr: "4 saniye bekle", en: "Hold 4" }
+    ];
+    let breathTimer = null;
+    let breathPhaseIndex = 0;
+    let breathRunning = false;
+
+    function setBreathPhase(idx) {
+      const phase = breathPhases[idx % breathPhases.length];
+      breathVisual.setAttribute("data-phase", phase.key);
+      breathLabel.innerHTML =
+        '<span class="lang lang-tr">' + phase.tr + "</span>" +
+        '<span class="lang lang-en">' + phase.en + "</span>";
+    }
+
+    function stopBoxBreathing() {
+      if (breathTimer) {
+        clearInterval(breathTimer);
+        breathTimer = null;
+      }
+      breathRunning = false;
+      breathPhaseIndex = 0;
+      breathVisual.setAttribute("data-phase", "rest");
+      breathLabel.innerHTML =
+        '<span class="lang lang-tr">4 saniye AL · 4 tut · 4 ver · 4 bekle</span>' +
+        '<span class="lang lang-en">Inhale 4 · Hold 4 · Exhale 4 · Hold 4</span>';
+      breathToggle.classList.remove("btn-accent");
+    }
+
+    function startBoxBreathing() {
+      if (breathRunning) return;
+      breathRunning = true;
+      breathToggle.classList.add("btn-accent");
+      setBreathPhase(breathPhaseIndex);
+      breathTimer = setInterval(() => {
+        breathPhaseIndex = (breathPhaseIndex + 1) % breathPhases.length;
+        setBreathPhase(breathPhaseIndex);
+      }, 4000);
+      document.getElementById("breath-card").scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    breathToggle.addEventListener("click", () => {
+      if (breathRunning) {
+        stopBoxBreathing();
+      } else {
+        startBoxBreathing();
+      }
+    });
+
+    // --- Awareness question ---
+    const awarenessTextEl = document.getElementById("awareness-text");
+    const awarenessQuestions = [
+      {
+        tr: "Bugün Allah için yaptığım en küçük ama en içten şey neydi?",
+        en: "What was the smallest but most sincere thing I did for Allah today?"
+      },
+      {
+        tr: "Bugün nefis hangi bahane ile beni durdurmaya çalıştı?",
+        en: "What excuse did my nafs use to hold me back today?"
+      },
+      {
+        tr: "Bugün dünyaya değil, ahirete yatırım yaptığım bir an oldu mu?",
+        en: "Was there a moment today where I invested in the Hereafter, not dunya?"
+      },
+      {
+        tr: "Kime iyilik yapmayı erteledim, şimdi en küçük adım ne olabilir?",
+        en: "Whom did I delay serving, and what tiny step could I take now?"
+      },
+      {
+        tr: "Şu an şükredebileceğim üç küçük nimeti sayabilir miyim?",
+        en: "Can I name three small blessings to thank for right now?"
+      },
+      {
+        tr: "Bugün hangi duygumu Rabbime açtım, hangisini bastırdım?",
+        en: "Which feeling did I share with my Lord today, which did I suppress?"
+      },
+      {
+        tr: "İnsanlara karşı dilimi veya bakışımı nerede daha merhametli kılabilirim?",
+        en: "Where can I make my tongue or gaze more merciful toward people?"
+      }
+    ];
+
+    function pickAwarenessQuestion() {
+      const today = getTodayDateKey();
+      const savedDate = localStorage.getItem("ht-awareness-question-date");
+      let index = parseInt(localStorage.getItem("ht-awareness-question-index") || "0", 10) || 0;
+      if (savedDate !== today) {
+        index = Math.floor(Math.random() * awarenessQuestions.length);
+        localStorage.setItem("ht-awareness-question-date", today);
+        localStorage.setItem("ht-awareness-question-index", index);
+      }
+      const q = awarenessQuestions[index % awarenessQuestions.length];
+      awarenessTextEl.innerHTML =
+        '<span class="lang lang-tr">' + q.tr + "</span>" +
+        '<span class="lang lang-en">' + q.en + "</span>";
+    }
+
+    // --- Emergency protocols ---
+    const emergencyMessageEl = document.getElementById("emergency-message");
+    const emergencyProtocols = {
+      lust: {
+        tab: "seytan",
+        target: "seytan-game-8",
+        stepsTr: [
+          "Dur ve 3 derin nefes al (kutu nefesini başlat).",
+          "En az 3 kez istiâze et: “Eûzü billâhi mine’ş-şeytânirracîm”.",
+          "En küçük hayrı seç: tevbe, dua, ekranı kapatmak."
+        ],
+        stepsEn: [
+          "Pause and take 3 deep breaths (start box breathing).",
+          "Seek refuge 3 times: “A‘ūdhu billāhi mina’ş-shayṭāni’r-rajīm”.",
+          "Choose a tiny good act: repentance, dua, close the screen."
+        ],
+        duaTr: "Allah’ım gözümü, kalbimi ve bedenimi haramdan koru.",
+        duaEn: "O Allah, protect my eyes, heart, and body from haram."
+      },
+      anger: {
+        tab: "seytan",
+        target: "seytan-game-7",
+        stepsTr: [
+          "Konuşmayı durdur, nefes egzersizi ile 1 dakika sakinleş.",
+          "Mekan veya pozisyon değiştir, abdest alabiliyorsan al.",
+          "Kararı öfke geçene kadar ertele; istiğfar et."
+        ],
+        stepsEn: [
+          "Stop speaking and calm for a minute with breathing.",
+          "Change place or posture; make wudu if possible.",
+          "Delay decisions until calm; say istighfar."],
+        duaTr: "Allah’ım kalbime sekinet indir, dilimi koru.",
+        duaEn: "O Allah, send calm to my heart and guard my tongue."
+      },
+      despair: {
+        tab: "nefis",
+        target: "nefis-game-6",
+        stepsTr: [
+          "“Dönüş kapısı kapalı değil” cümlesini yüksek sesle hatırla.",
+          "En az 1 istiğfar ve 1 küçük hayır planla (sadaka/dua).",
+          "Kutu nefes yap ve tevbe duası ile bitir."
+        ],
+        stepsEn: [
+          "Remind yourself aloud: the door of return is open.",
+          "Plan one istighfar and one small good (charity/dua).",
+          "Do box breathing and end with repentance."
+        ],
+        duaTr: "Rabbim, umudumu rahmetinle tazele, beni bırakma.",
+        duaEn: "My Lord, renew my hope with Your mercy and do not leave me."
+      },
+      comparison: {
+        tab: "dunya",
+        target: "dunya-game-2",
+        stepsTr: [
+          "Kıyas yaptığını fark et ve gözünü nimete değil, şükre çevir.",
+          "İçinden “Onun için hayırlı olsun” de, dua et.",
+          "Kendi küçük ilerleme adımını yaz veya yap."
+        ],
+        stepsEn: [
+          "Notice the comparison and shift eyes to gratitude, not envy.",
+          "Say internally “May it be blessed for them” and make dua.",
+          "Write or do one tiny step for your own growth."],
+        duaTr: "Allah’ım, kalbimi hasetten arındır, şükürle doldur.",
+        duaEn: "O Allah, cleanse my heart from envy and fill it with gratitude."
+      },
+      procrastination: {
+        tab: "seytan",
+        target: "seytan-game-4",
+        stepsTr: [
+          "Şimdi yapabileceğin 2 dakikalık en küçük hayrı seç.",
+          "Zaman tut ve bitir; sonra bir nefes egzersizi ile pekiştir.",
+          "Erteleme cümlesini fark ettiğinde istiâze et."
+        ],
+        stepsEn: [
+          "Choose the smallest good you can do now for 2 minutes.",
+          "Time it and finish; reinforce with a breathing round.",
+          "When the delaying sentence appears, seek refuge."],
+        duaTr: "Rabbim, beni hayra çabuk olan kullarından eyle.",
+        duaEn: "My Lord, make me among those who rush to good."
+      }
+    };
+
+    function renderEmergencyMessage(config) {
+      emergencyMessageEl.innerHTML = `
+        <div class="lang lang-tr"><strong>3 Adım:</strong>
+          <ol class="emergency-steps">
+            ${config.stepsTr.map(s => `<li>${s}</li>`).join("")}
+          </ol>
+          <div><em>${config.duaTr}</em></div>
+        </div>
+        <div class="lang lang-en"><strong>3 Steps:</strong>
+          <ol class="emergency-steps">
+            ${config.stepsEn.map(s => `<li>${s}</li>`).join("")}
+          </ol>
+          <div><em>${config.duaEn}</em></div>
+        </div>
+      `;
+    }
+
+    document.querySelectorAll("[data-trigger]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const key = btn.getAttribute("data-trigger");
+        const cfg = emergencyProtocols[key];
+        if (!cfg) return;
+        goToTab(cfg.tab);
+        setTimeout(() => openAccordionById(cfg.target), 120);
+        renderEmergencyMessage(cfg);
+        startBoxBreathing();
+        registerDailyActivity();
       });
     });
 
-    // Initial render
+    // --- Initial render ---
+    updateStreakDisplay();
+    updateTopicChip(currentTopic);
     renderChecklist(currentTopic);
+    pickAwarenessQuestion();
   </script>
 </body>
 </html>
