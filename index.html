@@ -728,6 +728,158 @@
       font-family: var(--font-sans);
     }
 
+    .note-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+      align-items: center;
+    }
+
+    .btn-ghost {
+      background: rgba(148, 163, 184, 0.08);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      color: var(--text);
+    }
+
+    .notes-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(2, 6, 23, 0.8);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 20;
+    }
+
+    .notes-overlay.active {
+      display: flex;
+    }
+
+    .notes-overlay-card {
+      background: var(--panel);
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      box-shadow: var(--shadow-soft);
+      width: min(960px, 100%);
+      max-height: 90vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .notes-overlay-header {
+      padding: 14px 18px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+
+    .notes-overlay-title {
+      margin: 0;
+      font-size: 1.05rem;
+      letter-spacing: 0.01em;
+    }
+
+    .notes-overlay-sub {
+      margin: 4px 0 0;
+      font-size: 0.85rem;
+      color: var(--text-soft);
+      line-height: 1.5;
+    }
+
+    .notes-close {
+      background: transparent;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 6px 10px;
+      cursor: pointer;
+    }
+
+    .notes-overlay-body {
+      padding: 14px 18px 18px;
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.9));
+    }
+
+    .notes-search-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .notes-search-row input {
+      flex: 1 1 240px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      border-radius: 12px;
+      color: var(--text);
+      padding: 8px 10px;
+      font-size: 0.9rem;
+    }
+
+    .notes-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .notes-group {
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      border-radius: 14px;
+      padding: 10px 12px;
+      background: rgba(148, 163, 184, 0.06);
+    }
+
+    .notes-group-header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+
+    .notes-date {
+      font-weight: 700;
+      color: #c7d2fe;
+    }
+
+    .notes-group small {
+      color: var(--text-soft);
+    }
+
+    .notes-entry-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+    }
+
+    .notes-entry {
+      background: rgba(2, 6, 23, 0.65);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      border-radius: 12px;
+      padding: 8px 10px;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .notes-entry strong {
+      color: var(--accent-strong);
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.85rem;
+    }
+
     .breath-card {
       margin-top: 12px;
       padding: 12px;
@@ -746,32 +898,54 @@
       background: radial-gradient(circle at 50% 50%, rgba(125, 211, 252, 0.35), rgba(59, 130, 246, 0.12));
       margin: 0 auto;
       border: 1px solid rgba(125, 211, 252, 0.45);
-      transition: transform 1s ease, opacity 1s ease;
+      transition: transform 1.2s ease, opacity 1s ease, box-shadow 1s ease;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #e0f2fe;
       font-weight: 700;
+      box-shadow: 0 0 0 rgba(125, 211, 252, 0.18);
     }
 
     .breath-visual[data-phase="inhale"] {
-      transform: scale(1.08);
+      transform: scale(1.18);
       opacity: 1;
+      animation: breath-in 4s ease-in-out forwards;
+      box-shadow: 0 0 25px rgba(125, 211, 252, 0.4);
     }
 
     .breath-visual[data-phase="hold"] {
-      transform: scale(1.02);
+      transform: scale(1.05);
       opacity: 0.9;
+      animation: breath-hold 4s ease-in-out forwards;
     }
 
     .breath-visual[data-phase="exhale"] {
-      transform: scale(0.88);
+      transform: scale(0.78);
       opacity: 0.85;
+      animation: breath-out 4s ease-in-out forwards;
+      box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
     }
 
     .breath-visual[data-phase="rest"] {
       transform: scale(0.94);
       opacity: 0.9;
+      animation: none;
+    }
+
+    @keyframes breath-in {
+      0% { transform: scale(0.92); }
+      100% { transform: scale(1.18); }
+    }
+
+    @keyframes breath-hold {
+      0% { transform: scale(1.05); }
+      100% { transform: scale(1.05); }
+    }
+
+    @keyframes breath-out {
+      0% { transform: scale(0.9); }
+      100% { transform: scale(0.78); }
     }
 
     .breath-label {
@@ -2635,6 +2809,16 @@
                 placeholder="Küçük ama net bir adım... / A small but clear step..."></textarea>
             </div>
           </div>
+
+          <div class="note-tools">
+            <button class="btn btn-ghost" id="notes-open">
+              <span class="btn-icon">📘</span>
+              <span class="lang lang-tr">Günlük not arşivini aç</span>
+              <span class="lang lang-en">Open daily notes archive</span>
+            </button>
+            <small class="lang lang-tr">Tüm tarihli notları tek ekranda gör & arama yap.</small>
+            <small class="lang lang-en">See all dated notes together and search across them.</small>
+          </div>
         </aside>
       </div>
 
@@ -2663,6 +2847,32 @@
           </div>
         </div>
       </footer>
+    </div>
+  </div>
+
+  <div class="notes-overlay" id="notes-overlay">
+    <div class="notes-overlay-card">
+      <div class="notes-overlay-header">
+        <div>
+          <h3 class="notes-overlay-title">
+            <span class="lang lang-tr">Günlük Not Arşivi</span>
+            <span class="lang lang-en">Daily Notes Archive</span>
+          </h3>
+          <p class="notes-overlay-sub">
+            <span class="lang lang-tr">Tüm tarihli notlarını yan yana gör, arama ile hızlıca bul.</span>
+            <span class="lang lang-en">Browse every dated note together and search instantly.</span>
+          </p>
+        </div>
+        <button class="notes-close" id="notes-close">✕</button>
+      </div>
+      <div class="notes-overlay-body">
+        <div class="notes-search-row">
+          <input type="text" id="notes-search" placeholder="Tarihe veya içeriğe göre ara / Search by date or content" />
+          <small class="lang lang-tr">Boş bırakırsan tüm notlar listelenir.</small>
+          <small class="lang lang-en">Leave empty to see everything.</small>
+        </div>
+        <div class="notes-list" id="notes-list"></div>
+      </div>
     </div>
   </div>
 
@@ -3028,8 +3238,33 @@
 
     const noteIds = ["note-awareness", "note-trigger", "note-gratitude", "note-intent"];
     const noteDateInput = document.getElementById("note-date");
+    const notesOverlay = document.getElementById("notes-overlay");
+    const notesOpenBtn = document.getElementById("notes-open");
+    const notesCloseBtn = document.getElementById("notes-close");
+    const notesSearchInput = document.getElementById("notes-search");
+    const notesListEl = document.getElementById("notes-list");
+    let noteSearchText = "";
     let activeNoteDate = getTodayDateKey();
     let noteActivityDate = localStorage.getItem("ht-note-activity-date") || "";
+
+    const noteLabels = {
+      "note-awareness": {
+        tr: "Bugünkü farkındalığım",
+        en: "Today’s awareness"
+      },
+      "note-trigger": {
+        tr: "Fark ettiğim tetikleyici",
+        en: "Trigger I noticed"
+      },
+      "note-gratitude": {
+        tr: "Şükrettiğim bir şey",
+        en: "Something I’m grateful for"
+      },
+      "note-intent": {
+        tr: "Yarın için niyetim",
+        en: "Intention for tomorrow"
+      }
+    };
 
     function noteKey(date, id) {
       return `ht-note-${date}-${id}`;
@@ -3057,6 +3292,97 @@
         noteActivityDate = activeNoteDate;
         localStorage.setItem("ht-note-activity-date", noteActivityDate);
       }
+      if (notesOverlay.classList.contains("active")) {
+        renderNotesArchive();
+      }
+    }
+
+    function collectNoteArchive() {
+      const archive = {};
+      for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        if (!key) continue;
+        const match = key.match(/^ht-note-(\d{4}-\d{2}-\d{2})-(.+)$/);
+        if (!match) continue;
+        const date = match[1];
+        const id = match[2];
+        const value = localStorage.getItem(key) || "";
+        if (!value.trim()) continue;
+        if (!archive[date]) archive[date] = {};
+        archive[date][id] = value;
+      }
+      return archive;
+    }
+
+    function friendlyDate(dateStr) {
+      const parsed = new Date(dateStr + "T00:00:00");
+      if (isNaN(parsed)) return { tr: dateStr, en: dateStr };
+      return {
+        tr: parsed.toLocaleDateString("tr-TR", { weekday: "short", day: "2-digit", month: "short", year: "numeric" }),
+        en: parsed.toLocaleDateString("en-US", { weekday: "short", day: "2-digit", month: "short", year: "numeric" })
+      };
+    }
+
+    function renderNotesArchive() {
+      const archive = collectNoteArchive();
+      const dates = Object.keys(archive).sort().reverse();
+      const query = (noteSearchText || "").toLowerCase().trim();
+      notesListEl.innerHTML = "";
+      let rendered = 0;
+
+      dates.forEach(date => {
+        const entries = archive[date];
+        const combinedText = Object.values(entries).join(" ").toLowerCase();
+        const dateMatch = date.toLowerCase().includes(query);
+        const textMatch = combinedText.includes(query);
+        if (query && !(dateMatch || textMatch)) return;
+
+        const pretty = friendlyDate(date);
+        const entryHtml = noteIds
+          .filter(id => entries[id])
+          .map(id => {
+            const label = noteLabels[id] || { tr: id, en: id };
+            return `
+              <div class="notes-entry">
+                <strong><span class="lang lang-tr">${label.tr}</span><span class="lang lang-en">${label.en}</span></strong>
+                <div>${entries[id].replace(/\n/g, "<br>")}</div>
+              </div>
+            `;
+          })
+          .join("");
+
+        if (!entryHtml) return;
+        rendered++;
+        notesListEl.insertAdjacentHTML(
+          "beforeend",
+          `
+            <div class="notes-group">
+              <div class="notes-group-header">
+                <span class="notes-date">${date}</span>
+                <small><span class="lang lang-tr">${pretty.tr}</span><span class="lang lang-en">${pretty.en}</span></small>
+              </div>
+              <div class="notes-entry-list">${entryHtml}</div>
+            </div>
+          `
+        );
+      });
+
+      if (!rendered) {
+        notesListEl.innerHTML = `
+          <div class="notes-group">
+            <div class="notes-group-header">
+              <strong class="notes-date">
+                <span class="lang lang-tr">Kayıt bulunamadı</span>
+                <span class="lang lang-en">No notes yet</span>
+              </strong>
+            </div>
+            <div class="notes-entry">
+              <span class="lang lang-tr">Yeni bir tarih seçip yazmaya başlayabilirsin.</span>
+              <span class="lang lang-en">Pick a date above and start writing to fill your archive.</span>
+            </div>
+          </div>
+        `;
+      }
     }
 
     noteDateInput.value = activeNoteDate;
@@ -3071,6 +3397,26 @@
     });
 
     loadNotesForDate(activeNoteDate);
+
+    function openNotesOverlay() {
+      renderNotesArchive();
+      notesOverlay.classList.add("active");
+      setTimeout(() => notesSearchInput.focus(), 50);
+    }
+
+    function closeNotesOverlay() {
+      notesOverlay.classList.remove("active");
+    }
+
+    notesOpenBtn.addEventListener("click", openNotesOverlay);
+    notesCloseBtn.addEventListener("click", closeNotesOverlay);
+    notesOverlay.addEventListener("click", e => {
+      if (e.target === notesOverlay) closeNotesOverlay();
+    });
+    notesSearchInput.addEventListener("input", () => {
+      noteSearchText = notesSearchInput.value;
+      renderNotesArchive();
+    });
 
     // --- Breathing widget ---
     const breathToggle = document.getElementById("breath-toggle");
